@@ -1,48 +1,70 @@
-<?php
-/**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    design
- * @package     base_default
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
-?>
-  <!--[if lt IE 7 ]>
-    <script src="<?php echo $this->getSkinUrl('js/dd_belatedpng.js') ?>"></script>
-    <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
-  <![endif]-->
+<div class="site-footer">
+  <footer>
+    <div class="site-footer__section">
+      <div class="footer-menu">
+        <h6 class="footer-menu__heading">Updates</h6>
+      </div>
+      <div class="footer-menu">
+        <h6 class="footer-menu__heading">Vinyls</h6>
+        <ul class="footer-menu__list">
+          <li class="footer-menu__item"><a href="/">Featured Releases</a></li>
+          <li class="footer-menu__item"><a href="/">New Vinyls</a></li>
+          <li class="footer-menu__item"><a href="/">Top Sellers</a></li>
+          <li class="footer-menu__item"><a href="/">Vinyl Records</a></li>
+        </ul>
+      </div>
+    </div>
 
-  <!-- yui profiler and profileviewer - remove for production -->
-<!--  <script src="--><?php //echo $this->getSkinUrl('js/profiling/config.js') ?><!--"></script>-->
-<!--  <script src="--><?php //echo $this->getSkinUrl('js/profiling/yahoo-profiling.min.js') ?><!--"></script>-->
-  <!-- end profiling code -->
-<div class="footer-container">
-    <footer>
-        <?php echo $this->getChildHtml() ?>
-        <p class="bugs"><?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
-        <address><?php echo $this->getCopyright() ?></address>
-    </footer>
+    <div class="site-footer__section">
+      <div class="footer-menu">
+        <h6 class="footer-menu__heading">Merchandise</h6>
+        <ul class="footer-menu__list">
+          <li class="footer-menu__item"><a href="/">T-shirts</a></li>
+          <li class="footer-menu__item"><a href="/">Posters</a></li>
+        </ul>
+      </div>
+      <div class="footer-menu">
+        <h6 class="footer-menu__heading">Bands</h6>
+        <ul class="footer-menu__list">
+          <li class="footer-menu__item"><a href="/">SATAN!</a></li>
+          <li class="footer-menu__item"><a href="/">Amateur Takes Control</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__section">
+      <div class="footer-menu">
+        <h6 class="footer-menu__heading">Account</h6>
+        <ul class="footer-menu__list">
+          <li class="footer-menu__item"><a href="/">Your Account</a></li>
+          <li class="footer-menu__item"><a href="/">Your Cart</a></li>
+          <li class="footer-menu__item"><a href="/">Your Wishlist</a></li>
+        </ul>
+      </div>
+      <div class="footer-menu">
+        <h6 class="footer-menu__heading">FAQ</h6>
+        <ul class="footer-menu__list">
+          <li class="footer-menu__item"><a href="/">Shipping Info</a></li>
+          <li class="footer-menu__item"><a href="/">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__section">
+      <div class="footer-menu">
+        <h6 class="footer-menu__heading">Follow Us</h6>
+        <ul class="footer-menu__list">
+          <li class="footer-menu__item"><a href="/">Facebook</a></li>
+          <li class="footer-menu__item"><a href="/">Instagram</a></li>
+          <li class="footer-menu__item"><a href="/">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="footer-menu">
+        <h6 class="footer-menu__heading">Contact Us</h6>
+        <ul class="footer-menu__list">
+          <li class="footer-menu__item"><a href="/">info@hailsatanrecords.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </div>
-<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-     chromium.org/developers/how-tos/chrome-frame-getting-started -->
-<!--[if lt IE 7 ]>
-  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-<![endif]-->

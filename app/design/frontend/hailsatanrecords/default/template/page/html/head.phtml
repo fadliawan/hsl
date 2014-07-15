@@ -2,7 +2,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Home | Hail Satan Records</title>
+<title><?php echo $this->getTitle(); ?></title>
 
-<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/skin/frontend/hailsatanrecords/default/css/lightSlider.css">
+<link rel="stylesheet" href="/skin/frontend/hailsatanrecords/default/css/jquery.fancybox.css">
 <link rel="stylesheet" href="/skin/frontend/hailsatanrecords/default/css/style.css">

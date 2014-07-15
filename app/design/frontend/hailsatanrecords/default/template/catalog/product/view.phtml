@@ -1,0 +1,99 @@
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+
+<div class="vinyl">
+  <?php if (count($_product->getMediaGalleryImages()) > 0) : ?>
+    <div class="vinyl__gallery">
+      <ul class="js-vinyl-slider">
+        <?php foreach ($_product->getMediaGalleryImages() as $_image) : ?>
+          <li data-thumb="<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile())->resize(90); ?>">
+            <a class="js-vinyl-fancybox" href="<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile())->resize(600); ?>" data-fancybox-group="vinyl-fancybox">
+              <img src="<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile())->resize(300); ?>" width="300">
+            </a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+      <div class="vinyl__gallery-zoom js-vinyl-zoom"></div>
+    </div>
+  <?php endif; ?>
+
+  <div class="vinyl__info">
+    <h1 class="vinyl__title"><?php echo Mage::getResourceModel('catalog/product')->getAttributeRawValue($_product->getId(), 'album_title', $_product->getStoreId()); ?> <b>- <?php echo Mage::getResourceModel('catalog/product')->getAttributeRawValue($_product->getId(), 'artist', $_product->getStoreId()); ?></b></h1>
+    <p class="vinyl__spec"><?php echo Mage::getResourceModel('catalog/product')->getAttributeRawValue($_product->getId(), 'vinyl_spec', $_product->getStoreId()); ?></p>
+
+    <?php if ($_product->getDescription()) : ?>
+    <div class="vinyl__description">
+      <?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?>
+    </div>
+    <?php endif; ?>
+
+    <div class="vinyl__actions">
+      <div class="vinyl-cart">
+        <div class="vinyl-cart__number">1</div>
+        <div class="vinyl-cart__add-reduce">
+          <div class="vinyl-cart__add-item">&#9650;</div>
+          <div class="vinyl-cart__reduce-item">&#9660;</div>
+        </div>
+        <button class="vinyl-cart__add">Add to Cart</button>
+      </div>
+      <div class="vinyl-price">
+        <div class="vinyl-price__label">Total</div>
+        <div class="vinyl-price__amount"><span class="vinyl-price__currency">SGD</span> 35.00</div>
+        <p class="vinyl-price__shipping-info">Shipping costs are calculated when you Checkout</p>
+      </div>
+      <div class="vinyl-share">
+        <p class="vinyl-share__text">Share this product with your friends</p>
+        <ul class="vinyl-share__media">
+          <li><a href="/">Facebook</a></li>
+          <li><a href="/">Twitter</a></li>
+          <li><a href="/">Pinterest</a></li>
+        </ul>
+      </div>
+      <div class="vinyl-links">
+        <a href="/">back to store</a> | <a href="/">checkout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/skin/frontend/hailsatanrecords/default/js/jquery-1.11.1.min.js"></script>
+<script src="/skin/frontend/hailsatanrecords/default/js/jquery.lightSlider.min.js"></script>
+<script src="/skin/frontend/hailsatanrecords/default/js/jquery.fancybox.pack.js"></script>
+<script>
+  (function() {
+
+    var $vinylSlider = $('.js-vinyl-slider');
+
+    $vinylSlider.lightSlider({
+      slideWidth: 300,
+      slideMargin: 0,
+      slideMove: 1,
+      minSlide: 1,
+      maxSlide: 1,
+      controls: false,
+      loop: false,
+      thumbWidth: 90,
+      thumbMargin: 15,
+      gallery: true,
+      useCSS: true,
+      mode: 'fade',
+      onSliderLoad: function() {
+        var $vinylFancybox = $('.js-vinyl-fancybox');
+
+        $vinylFancybox.fancybox({
+          loop: false
+        });
+
+        $('.js-vinyl-zoom').click(function() {
+          var index = $vinylSlider.find('li').index($('.active'));
+
+          $.fancybox.open($vinylFancybox, {
+            loop: false,
+            index: index
+          });
+        });
+      }
+    });
+
+  })();
+</script>

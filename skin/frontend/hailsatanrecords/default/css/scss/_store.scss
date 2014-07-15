@@ -103,7 +103,8 @@
   margin-bottom: 0;
 }
 
-.product__detail-link {
+.product__detail-link,
+.product__detail-link:visited {
   color: #666;
   display: block;
   float: left;

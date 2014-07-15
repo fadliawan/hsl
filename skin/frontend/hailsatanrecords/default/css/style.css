@@ -701,7 +701,8 @@ body {
 .product-info__spec {
   margin-bottom: 0; }
 
-.product__detail-link {
+.product__detail-link,
+.product__detail-link:visited {
   color: #666;
   display: block;
   float: left;
@@ -714,12 +715,15 @@ body {
   -moz-transition: 0.5s 0.3s all;
   -o-transition: 0.5s 0.3s all;
   transition: 0.5s 0.3s all; }
-  .product__detail-link:hover {
+  .product__detail-link:hover,
+  .product__detail-link:visited:hover {
     color: #000;
     cursor: pointer; }
-  .product:hover .product__detail-link {
+  .product:hover .product__detail-link, .product:hover
+  .product__detail-link:visited {
     opacity: 1; }
-  .product.product--active .product__detail-link {
+  .product.product--active .product__detail-link, .product.product--active
+  .product__detail-link:visited {
     -webkit-transition: 0.1s all;
     -moz-transition: 0.1s all;
     -o-transition: 0.1s all;

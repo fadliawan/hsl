@@ -29,19 +29,20 @@
 
     <div class="vinyl__actions">
       <div class="vinyl-cart">
-        <div class="vinyl-cart__number">1</div>
+        <div class="vinyl-cart__number js-quantity-text"><?php echo $this->getProductDefaultQty() * 1; ?></div>
         <div class="vinyl-cart__add-reduce">
-          <div class="vinyl-cart__add-item">&#9650;</div>
-          <div class="vinyl-cart__reduce-item">&#9660;</div>
+          <div class="vinyl-cart__add-item js-quantity-add">&#9650;</div>
+          <div class="vinyl-cart__reduce-item js-quantity-reduce">&#9660;</div>
         </div>
+        <input type="hidden" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1; ?>" class="qty js-quantity-input" />
         <button class="vinyl-cart__add">Add to Cart</button>
       </div>
       <div class="vinyl-price">
-        <div class="vinyl-price__label">Total</div>
         <div class="vinyl-price__amount">
           <span class="vinyl-price__currency"><?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?></span>
-          <?php echo number_format($_product->getPrice(), 2); ?>
+          <span class="js-vinyl-price"><?php echo number_format($_product->getPrice(), 2); ?></span>
         </div>
+        <div class="vinyl-price__label">Total</div>
         <p class="vinyl-price__shipping-info">Shipping costs are calculated when you Checkout</p>
       </div>
       <div class="vinyl-share">
@@ -96,6 +97,30 @@
           });
         });
       }
+    });
+
+    var $QtyInput = $('.js-quantity-input');
+    var basePrice = <?php echo number_format($_product->getPrice(), 2); ?>;
+
+    $('.js-quantity-add').on('click', function() {
+      var currentQty = parseInt($QtyInput.val(), 10);
+
+      $QtyInput.val(currentQty + 1).trigger('change');
+    });
+
+    $('.js-quantity-reduce').on('click', function() {
+      var currentQty = parseInt($QtyInput.val(), 10);
+
+      if (currentQty <= 1) return;
+
+      $QtyInput.val(currentQty - 1).trigger('change');
+    });
+
+    $QtyInput.on('change', function() {
+      var qty = parseInt($(this).val(), 10);
+      var totalPrice = (qty * basePrice).toFixed(2);
+      $('.js-quantity-text').text(qty);
+      $('.js-vinyl-price').text(totalPrice);
     });
 
   })();

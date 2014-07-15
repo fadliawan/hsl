@@ -38,7 +38,10 @@
       </div>
       <div class="vinyl-price">
         <div class="vinyl-price__label">Total</div>
-        <div class="vinyl-price__amount"><span class="vinyl-price__currency">SGD</span> 35.00</div>
+        <div class="vinyl-price__amount">
+          <span class="vinyl-price__currency"><?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?></span>
+          <?php echo number_format($_product->getPrice(), 2); ?>
+        </div>
         <p class="vinyl-price__shipping-info">Shipping costs are calculated when you Checkout</p>
       </div>
       <div class="vinyl-share">
@@ -50,7 +53,7 @@
         </ul>
       </div>
       <div class="vinyl-links">
-        <a href="/">back to store</a> | <a href="/">checkout</a>
+        <a href="/store.html">back to store</a> | <a href="/">checkout</a>
       </div>
     </div>
   </div>

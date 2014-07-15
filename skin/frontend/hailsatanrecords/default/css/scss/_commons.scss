@@ -1,0 +1,30 @@
+$heading-color: #343434;
+
+$hsr-red: #ff3000;
+
+%heading-one {
+  color: $heading-color;
+  font-size: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+@mixin hsr-transition($value) {
+  -webkit-transition: $value;
+     -moz-transition: $value;
+       -o-transition: $value;
+          transition: $value;
+}
+
+@mixin hsr-transform($value) {
+  -webkit-transform: $value;
+  -moz-transform:    $value;
+  -ms-transform:     $value;
+  -o-transform:      $value;
+  transform:         $value;
+}

@@ -1,0 +1,76 @@
+.site-content {
+  background: #ececec;
+  margin: -50px auto 0;
+  overflow: hidden;
+  width: 100%;
+
+  .page-home & {
+    background: transparent url('img/carousel-1.jpg') no-repeat center;
+    background-size: cover;
+    height: 700px;
+    margin-top: -180px;
+  }
+
+  .page-product & {
+    background-color: #fff;
+  }
+}
+
+.content {
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 80px;
+  width: 1020px;
+}
+
+.carousel {
+  text-align: center;
+}
+
+// About Page
+
+.about-whatever {
+  border: 10px solid #fff;
+  margin-bottom: 60px;
+  padding: 50px 265px 50px 120px;
+  position: relative;
+
+  h1 {
+    @extend %heading-one;
+  }
+
+  p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  blockquote {
+    bottom: 71px;
+    color: $heading-color;
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0;
+    position: absolute;
+    right: 15px;
+    text-align: right;
+    text-transform: uppercase;
+  }
+}
+
+// Store Page
+
+@import "store";
+
+// Vinyl Details Page
+
+@import "vinyl";
+
+@media only screen and (min-width: 480px) {
+  // Mobile landscape + Tablet portrait
+}
+
+@media only screen and (min-width: 1020px) {
+  // Tablet landscape + Desktop
+}

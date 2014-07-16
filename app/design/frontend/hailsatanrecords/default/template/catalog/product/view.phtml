@@ -107,24 +107,24 @@
       }
     });
 
-    var $QtyInput = $('.js-quantity-input');
+    var $qtyInput = $('.js-quantity-input');
     var basePrice = <?php echo number_format($_product->getPrice(), 2); ?>;
 
     $('.js-quantity-add').on('click', function() {
-      var currentQty = parseInt($QtyInput.val(), 10);
+      var currentQty = parseInt($qtyInput.val(), 10);
 
-      $QtyInput.val(currentQty + 1).trigger('change');
+      $qtyInput.val(currentQty + 1).trigger('change');
     });
 
     $('.js-quantity-reduce').on('click', function() {
-      var currentQty = parseInt($QtyInput.val(), 10);
+      var currentQty = parseInt($qtyInput.val(), 10);
 
       if (currentQty <= 1) return;
 
-      $QtyInput.val(currentQty - 1).trigger('change');
+      $qtyInput.val(currentQty - 1).trigger('change');
     });
 
-    $QtyInput.on('change', function() {
+    $qtyInput.on('change', function() {
       var qty = parseInt($(this).val(), 10);
       var totalPrice = (qty * basePrice).toFixed(2);
       $('.js-quantity-text').text(qty);

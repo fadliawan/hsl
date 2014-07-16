@@ -1,22 +1,28 @@
+<?php
+  $urlString = Mage::helper('core/url')->getCurrentUrl();
+  $url = Mage::getSingleton('core/url')->parseUrl($urlString);
+  $path = $url->getPath();
+?>
+
 <div class="site-header">
   <header>
     <div class="site-logo"><a href="/">Homepage</a></div>
     <nav class="site-nav site-nav--first">
       <ul>
-        <li class="site-nav__item site-nav__item--current"><a href="/">Home</a></li>
+        <li class="site-nav__item <?php if ($path == '/') echo 'site-nav__item--current' ?>"><a href="/">Home</a></li>
         <li class="site-nav__separator"></li>
-        <li class="site-nav__item"><a href="/updates">Updates</a></li>
+        <li class="site-nav__item <?php if ($path == '/updates') echo 'site-nav__item--current' ?>"><a href="/updates">Updates</a></li>
         <li class="site-nav__separator"></li>
-        <li class="site-nav__item"><a href="/store.html">Store</a></li>
+        <li class="site-nav__item <?php if ($path == '/store.html') echo 'site-nav__item--current' ?>"><a href="/store.html">Store</a></li>
       </ul>
     </nav>
     <nav class="site-nav site-nav--last">
       <ul>
-        <li class="site-nav__item"><a href="/bands">Bands</a></li>
+        <li class="site-nav__item <?php if ($path == '/bands') echo 'site-nav__item--current' ?>"><a href="/bands">Bands</a></li>
         <li class="site-nav__separator"></li>
-        <li class="site-nav__item"><a href="/about">About</a></li>
+        <li class="site-nav__item <?php if ($path == '/about') echo 'site-nav__item--current' ?>"><a href="/about">About</a></li>
         <li class="site-nav__separator"></li>
-        <li class="site-nav__item"><a href="/contacts">Contact</a></li>
+        <li class="site-nav__item <?php if ($path == '/contacts') echo 'site-nav__item--current' ?>"><a href="/contacts">Contact</a></li>
       </ul>
     </nav>
     <nav class="site-nav site-nav--actions">

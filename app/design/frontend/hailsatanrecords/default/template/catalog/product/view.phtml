@@ -28,23 +28,31 @@
     <?php endif; ?>
 
     <div class="vinyl__actions">
-      <div class="vinyl-cart">
-        <div class="vinyl-cart__number js-quantity-text"><?php echo $this->getProductDefaultQty() * 1; ?></div>
-        <div class="vinyl-cart__add-reduce">
-          <div class="vinyl-cart__add-item js-quantity-add">&#9650;</div>
-          <div class="vinyl-cart__reduce-item js-quantity-reduce">&#9660;</div>
+      <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" class="js-product-addtocart-form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+        <?php echo $this->getBlockHtml('formkey') ?>
+        <div class="no-display">
+            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+            <input type="hidden" name="related_product" id="related-products-field" value="" />
         </div>
-        <input type="hidden" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1; ?>" class="qty js-quantity-input" />
-        <button class="vinyl-cart__add">Add to Cart</button>
-      </div>
-      <div class="vinyl-price">
-        <div class="vinyl-price__amount">
-          <span class="vinyl-price__currency"><?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?></span>
-          <span class="js-vinyl-price"><?php echo number_format($_product->getPrice(), 2); ?></span>
+        <div class="vinyl-cart">
+          <div class="vinyl-cart__number js-quantity-text"><?php echo $this->getProductDefaultQty() * 1; ?></div>
+          <div class="vinyl-cart__add-reduce">
+            <div class="vinyl-cart__add-item js-quantity-add">&#9650;</div>
+            <div class="vinyl-cart__reduce-item js-quantity-reduce">&#9660;</div>
+          </div>
+          <input type="hidden" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1; ?>" class="qty js-quantity-input" />
+          <button class="vinyl-cart__add" type="submit">Add to Cart</button>
         </div>
-        <div class="vinyl-price__label">Total</div>
-        <p class="vinyl-price__shipping-info">Shipping costs are calculated when you Checkout</p>
-      </div>
+        <div class="vinyl-price">
+          <div class="vinyl-price__amount">
+            <span class="vinyl-price__currency"><?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?></span>
+            <span class="js-vinyl-price"><?php echo number_format($_product->getPrice(), 2); ?></span>
+          </div>
+          <div class="vinyl-price__label">Total</div>
+          <p class="vinyl-price__shipping-info">Shipping costs are calculated when you Checkout</p>
+        </div>
+      </form>
+
       <div class="vinyl-share">
         <p class="vinyl-share__text">Share this product with your friends</p>
         <ul class="vinyl-share__media">
@@ -121,6 +129,14 @@
       var totalPrice = (qty * basePrice).toFixed(2);
       $('.js-quantity-text').text(qty);
       $('.js-vinyl-price').text(totalPrice);
+    });
+
+    var $productForm = $('.js-product-addtocart-form');
+    $productForm.on('submit', function() {
+      if (this.qty.value <= 0) {
+        alert("Please add quantity.");
+        return false;
+      }
     });
 
   })();

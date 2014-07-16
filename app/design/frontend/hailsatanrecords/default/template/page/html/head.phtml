@@ -13,3 +13,11 @@
 <link rel="stylesheet" href="/skin/frontend/hailsatanrecords/default/css/style.css">
 
 <script src="/js/mage/cookies.js"></script>
+
+<?php echo $this->getChildHtml() ?>
+
+<script>
+  window.setLocation = function(url) {
+    window.location.href = url;
+  };
+</script>

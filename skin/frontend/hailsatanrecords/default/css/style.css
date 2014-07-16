@@ -980,26 +980,28 @@ body {
   .shopping-cart-table tfoot td {
     padding-top: 20px; }
   .shopping-cart-table button {
-    border-radius: 5px;
-    background: #333;
-    border: none;
-    color: #fff;
+    background: #fff;
+    border: 1px solid #111;
+    color: #111;
     margin-right: 20px;
     padding: 7px 15px;
-    -webkit-transition: 0.3s all;
-    -moz-transition: 0.3s all;
-    -o-transition: 0.3s all;
-    transition: 0.3s all; }
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all; }
     .shopping-cart-table button:hover {
-      background: #111; }
+      background: #111;
+      color: #fff; }
     .shopping-cart-table button.shopping-cart-table__update, .shopping-cart-table button.shopping-cart-table__empty {
       float: right;
       margin-right: 0;
       margin-left: 20px; }
     .shopping-cart-table button.shopping-cart-table__update {
-      background: #ff3000; }
+      border-color: #ff3000;
+      color: #ff3000; }
       .shopping-cart-table button.shopping-cart-table__update:hover {
-        background: #CA2C08; }
+        background: #ff3000;
+        color: #fff; }
   .shopping-cart-table a,
   .shopping-cart-table a:visited {
     color: #111;

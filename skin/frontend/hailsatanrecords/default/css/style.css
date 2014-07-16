@@ -598,6 +598,8 @@ body {
   margin-bottom: 60px;
   padding: 50px 265px 50px 120px;
   position: relative; }
+  .about-whatever h1 {
+    text-align: left; }
   .about-whatever p {
     color: #666;
     font-size: 14px;

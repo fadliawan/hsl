@@ -23,7 +23,7 @@
       <ul>
         <li class="site-nav__item"><a href="/customer/account/login">Log In/Register</a></li>
         <li class="site-nav__separator"></li>
-        <li class="site-nav__item"><a href="/checkout/cart">Cart (0)</a></li>
+        <li class="site-nav__item"><a href="/checkout/cart">Cart (<?php echo $this->helper('checkout/cart')->getSummaryCount(); ?>)</a></li>
         <li class="site-nav__separator"></li>
         <li class="site-nav__item"><a href="/shipping-info">Shipping Info</a></li>
       </ul>

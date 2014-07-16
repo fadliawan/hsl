@@ -21,10 +21,25 @@
   overflow: hidden;
   padding-top: 80px;
   width: 1020px;
+
+  h1 {
+    @extend %heading-one;
+    text-align: center;
+  }
 }
 
 .carousel {
   text-align: center;
+}
+
+.messages {
+  margin: 0 auto 20px;
+  width: 90%;
+
+  li {
+    background: #FFFDC8;
+    padding: 7px 15px;
+  }
 }
 
 // About Page
@@ -66,6 +81,10 @@
 // Vinyl Details Page
 
 @import "vinyl";
+
+// Shopping Cart
+
+@import "cart";
 
 @media only screen and (min-width: 480px) {
   // Mobile landscape + Tablet portrait

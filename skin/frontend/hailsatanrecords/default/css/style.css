@@ -459,13 +459,13 @@ body {
   border-top: 8px solid #111;
   font-family: 'Lato', sans-serif; }
 
-.about-whatever h1, .store h1 {
+.content h1, .about-whatever h1, .store h1 {
   color: #343434;
   font-size: 30px;
   font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 30px; }
-  .about-whatever h1 strong, .store h1 strong {
+  .content h1 strong, .about-whatever h1 strong, .store h1 strong {
     font-weight: 400; }
 
 .site-header {
@@ -580,9 +580,18 @@ body {
   overflow: hidden;
   padding-top: 80px;
   width: 1020px; }
+  .content h1 {
+    text-align: center; }
 
 .carousel {
   text-align: center; }
+
+.messages {
+  margin: 0 auto 20px;
+  width: 90%; }
+  .messages li {
+    background: #FFFDC8;
+    padding: 7px 15px; }
 
 .about-whatever {
   border: 10px solid #fff;
@@ -950,6 +959,67 @@ body {
     text-decoration: none; }
     .vinyl-links a:hover {
       color: #000; }
+
+.shopping-cart-table {
+  margin: 0 auto 30px;
+  width: 90%; }
+  .shopping-cart-table th {
+    background: #eee;
+    color: #979797;
+    font-size: 16px;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase; }
+  .shopping-cart-table tbody tr td {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    text-align: center; }
+    .shopping-cart-table tbody tr td.shopping-cart-table__product {
+      padding-left: 25px;
+      text-align: left; }
+  .shopping-cart-table tfoot td {
+    padding-top: 20px; }
+  .shopping-cart-table button {
+    border-radius: 5px;
+    background: #333;
+    border: none;
+    color: #fff;
+    margin-right: 20px;
+    padding: 7px 15px;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    transition: 0.3s all; }
+    .shopping-cart-table button:hover {
+      background: #111; }
+    .shopping-cart-table button.shopping-cart-table__update, .shopping-cart-table button.shopping-cart-table__empty {
+      float: right;
+      margin-right: 0;
+      margin-left: 20px; }
+    .shopping-cart-table button.shopping-cart-table__update {
+      background: #ff3000; }
+      .shopping-cart-table button.shopping-cart-table__update:hover {
+        background: #CA2C08; }
+  .shopping-cart-table a,
+  .shopping-cart-table a:visited {
+    color: #111;
+    text-decoration: none; }
+
+.totals {
+  font-size: 18px;
+  line-height: 30px;
+  margin: 0 auto 30px;
+  width: 90%; }
+  .totals td {
+    padding-right: 20px; }
+
+.cart-empty {
+  font-size: 14px;
+  height: 200px;
+  line-height: 1.5em;
+  margin: 0 auto 50px;
+  text-align: center;
+  width: 90%; }
 
 .site-footer {
   background: #111;

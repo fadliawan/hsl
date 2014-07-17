@@ -78,3 +78,57 @@
     border: 2px solid $hsr-red;
   }
 }
+
+.band {
+  margin: 0 auto 50px;
+  overflow: hidden;
+  width: 980px;
+}
+
+.band__back-link,
+.band__back-link:visited {
+  color: $hsr-red;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.band__logo {
+  text-align: center;
+}
+
+h1.band__title {
+  margin-top: 30px;
+  text-align: left;
+  text-transform: none;
+}
+
+.band__description {
+  font-size: 14px;
+  height: 250px;
+  line-height: 1.5em;
+  margin-bottom: 20px;
+  @include hsr-column(2, 30px);
+}
+
+.band__photo {
+  float: left;
+  width: 474px;
+}
+
+.band-info {
+  float: right;
+  width: 474px;
+}
+
+.band-info__title {
+  background: $hsr-black;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 13px;
+  text-transform: uppercase;
+}
+

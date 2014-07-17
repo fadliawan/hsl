@@ -1,6 +1,7 @@
 $heading-color: #343434;
 
 $hsr-red: #ff3000;
+$hsr-black: #111;
 
 %heading-one {
   color: $heading-color;
@@ -27,4 +28,11 @@ $hsr-red: #ff3000;
   -ms-transform:     $value;
   -o-transform:      $value;
   transform:         $value;
+}
+
+@mixin hsr-column($count, $gap) {
+  -moz-column-count: $count;
+  -moz-column-gap: $gap;
+  -webkit-column-count: $count;
+  -webkit-column-gap: $gap;
 }

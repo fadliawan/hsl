@@ -1154,6 +1154,53 @@ body {
   .bands-showcase__item:hover .bands-showcase__member-pic {
     border: 2px solid #ff3000; }
 
+.band {
+  margin: 0 auto 50px;
+  overflow: hidden;
+  width: 980px; }
+
+.band__back-link,
+.band__back-link:visited {
+  color: #ff3000;
+  text-decoration: none;
+  text-transform: uppercase; }
+  .band__back-link:hover,
+  .band__back-link:visited:hover {
+    text-decoration: underline; }
+
+.band__logo {
+  text-align: center; }
+
+h1.band__title {
+  margin-top: 30px;
+  text-align: left;
+  text-transform: none; }
+
+.band__description {
+  font-size: 14px;
+  height: 250px;
+  line-height: 1.5em;
+  margin-bottom: 20px;
+  -moz-column-count: 2;
+  -moz-column-gap: 30px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 30px; }
+
+.band__photo {
+  float: left;
+  width: 474px; }
+
+.band-info {
+  float: right;
+  width: 474px; }
+
+.band-info__title {
+  background: #111111;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 13px;
+  text-transform: uppercase; }
+
 .site-footer {
   background: #111;
   border-top: 2px solid #ff3000;

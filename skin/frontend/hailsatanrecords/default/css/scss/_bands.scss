@@ -1,0 +1,80 @@
+.bands-showcase {
+  margin: 0 auto 50px;
+  overflow: hidden;
+  width: 980px;
+}
+
+.bands-showcase__item {
+  float: left;
+  height: 304px;
+  overflow: hidden;
+  position: relative;
+  width: 478px;
+
+  &:nth-child(2n+2) {
+    float: right;
+  }
+}
+
+.bands-showcase__link {
+  display: block;
+}
+
+.bands-showcase__name {
+  bottom: 2px;
+  color: #fff;
+  font-size: 20px;
+  height: 50px;
+  left: 2px;
+  line-height: 50px;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  width: 474px;
+}
+
+.bands-showcase__name-bg {
+  bottom: -50px;
+  background: $hsr-red;
+  height: 50px;
+  left: 2px;
+  @include hsr-transition(.3s all);
+  position: absolute;
+  width: 474px;
+
+  .bands-showcase__item:hover & {
+    bottom: 2px;
+  }
+}
+
+.bands-showcase__logo {
+  background: rgba(0, 0, 0, .7);
+  height: 250px;
+  left: 2px;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: 2px;
+  @include hsr-transition(.3s all);
+  width: 474px;
+
+  img {
+    position: relative;
+    top: 50%;
+    @include hsr-transform(translateY(-50%));
+  }
+
+  .bands-showcase__item:hover & {
+    opacity: 1;
+  }
+}
+
+.bands-showcase__member-pic {
+  border: 2px solid transparent;
+  @include hsr-transition(.3s all);
+
+  .bands-showcase__item:hover & {
+    border: 2px solid $hsr-red;
+  }
+}

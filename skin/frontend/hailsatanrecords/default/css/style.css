@@ -577,6 +577,7 @@ body {
 
 .content {
   margin: 0 auto;
+  min-height: 300px;
   overflow: hidden;
   padding-top: 80px;
   width: 1020px; }
@@ -638,12 +639,19 @@ body {
     padding-bottom: 40px; }
   #contactForm .buttons-set button {
     background: #ff3000;
-    border: none;
+    border: 1px solid #ff3000;
     color: #fff;
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     padding: 13px 75px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    -webkit-transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -o-transition: 0.1s all;
+    transition: 0.1s all; }
+    #contactForm .buttons-set button:hover {
+      background: #fff;
+      color: #ff3000; }
   #contactForm label {
     display: block;
     font-size: 14px;

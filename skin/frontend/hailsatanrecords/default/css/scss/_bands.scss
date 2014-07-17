@@ -128,7 +128,66 @@ h1.band__title {
   background: $hsr-black;
   color: #fff;
   font-size: 14px;
+  margin-bottom: 20px;
   padding: 8px 13px;
   text-transform: uppercase;
 }
 
+.band-info__item {
+  margin-bottom: 20px;
+}
+
+.band-albums {
+  overflow: hidden;
+}
+
+.band-albums__item {
+  display: block;
+  float: left;
+  @include hsr-transition(.2s all);
+  width: 215px;
+
+  &:nth-child(2n+2) {
+    float: right;
+  }
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.band-albums__link {
+  text-decoration: none;
+}
+
+.band-albums__cover {
+  float: left;
+  margin-right: 10px;
+}
+
+.band-albums__title,
+.band-albums__spec {
+  color: $hsr-red;
+  margin: 0;
+  text-decoration: none;
+}
+
+.band-albums__title {
+  font-weight: 700;
+}
+
+.band-social {
+  color: $hsr-red;
+
+  a,
+  a:visited {
+    color: $hsr-red;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

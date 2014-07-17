@@ -1,3 +1,9 @@
+<?php
+  $collection = Mage::getModel('catalog/product')->getCollection();
+  $collection->addAttributeToSelect('artist');
+  $collection->addFieldToFilter('artist', 'Amateur Takes Control');
+?>
+
 <div class="band">
   <a class="band__back-link" href="/bands/">Back to <b>bands</b></a>
   <br>
@@ -20,9 +26,26 @@
   <div class="band-info">
     <div class="band-info__item">
       <h2 class="band-info__title">Get Music from The Band</h2>
+      <ul class="band-albums">
+        <?php foreach ($collection as $_product) : ?>
+          <?php
+            // Reload the product to show custom image attributes
+            $productId = $_product->getId();
+            $_product = Mage::getModel('catalog/product')->load($productId);
+          ?>
+          <li class="band-albums__item">
+            <a class="band-albums__link" href="<?php echo $_product->getProductUrl(); ?>">
+              <img class="band-albums__cover" src="<?php echo $this->helper('catalog/image')->init($_product, 'vinyl_cover')->resize(90); ?>" width="90" height="90">
+              <p class="band-albums__title"><?php echo Mage::getResourceModel('catalog/product')->getAttributeRawValue($_product->getId(), 'album_title', $_product->getStoreId()); ?></p>
+              <p class="band-albums__spec"><?php echo Mage::getResourceModel('catalog/product')->getAttributeRawValue($_product->getId(), 'vinyl_spec', $_product->getStoreId()); ?></p>
+            </a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
     </div>
     <div class="band-info__item">
       <h2 class="band-info__title">Follow The Band</h2>
+      <p class="band-social"><a href="/">Facebook</a> | <a href="/">Bandcamp</a></p>
     </div>
   </div>
 </div>

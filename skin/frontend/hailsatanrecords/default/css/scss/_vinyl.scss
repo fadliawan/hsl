@@ -36,11 +36,13 @@
   width: 640px;
 }
 
-.vinyl__title {
+h1.vinyl__title {
   font-size: 22px;
   font-weight: 300;
   line-height: 1em;
   margin-bottom: .3em;
+  text-align: left;
+  text-transform: none;
 
   b {
     font-weight: 400;

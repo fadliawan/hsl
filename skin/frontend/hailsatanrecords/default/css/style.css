@@ -859,12 +859,14 @@ body {
   float: right;
   width: 640px; }
 
-.vinyl__title {
+h1.vinyl__title {
   font-size: 22px;
   font-weight: 300;
   line-height: 1em;
-  margin-bottom: .3em; }
-  .vinyl__title b {
+  margin-bottom: .3em;
+  text-align: left;
+  text-transform: none; }
+  h1.vinyl__title b {
     font-weight: 400; }
 
 .vinyl__spec {

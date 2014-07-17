@@ -35,9 +35,9 @@
           </div>
 
           <div class="product__info">
-            <h2 class="product-info__title"><?php echo Mage::getResourceModel('catalog/product')->getAttributeRawValue($_product->getId(), 'album_title', $_product->getStoreId()); ?></h2>
-            <p class="product-info__artist"><?php echo Mage::getResourceModel('catalog/product')->getAttributeRawValue($_product->getId(), 'artist', $_product->getStoreId()); ?></p>
-            <p class="product-info__spec"><?php echo Mage::getResourceModel('catalog/product')->getAttributeRawValue($_product->getId(), 'vinyl_spec', $_product->getStoreId()); ?></p>
+            <h2 class="product-info__title"><?php echo $_product->getAlbumTitle(); ?></h2>
+            <p class="product-info__artist"><?php echo $_product->getArtist(); ?></p>
+            <p class="product-info__spec"><?php echo $_product->getVinylSpec(); ?></p>
           </div>
 
           <a class="product__detail-link-area" href="<?php echo $_product->getProductUrl(); ?>"></a>

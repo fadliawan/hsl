@@ -28,7 +28,7 @@
       <ul>
         <li class="site-nav__item"><a href="/customer/account/login">Log In/Register</a></li>
         <li class="site-nav__separator"></li>
-        <li class="site-nav__item <?php if ($path == '/checkout/cart/') echo 'site-nav__item--current' ?>"><a href="/checkout/cart/">Cart (<?php echo $this->helper('checkout/cart')->getSummaryCount(); ?>)</a></li>
+        <li class="site-nav__item <?php if ($path == '/checkout/cart/') echo 'site-nav__item--current' ?>"><a href="/checkout/cart/">Cart (<?php echo $this->helper('checkout/cart')->getSummaryCount() == 0 ? 0 : $this->helper('checkout/cart')->getSummaryCount(); ?>)</a></li>
         <li class="site-nav__separator"></li>
         <li class="site-nav__item <?php if ($path == '/shipping-info/') echo 'site-nav__item--current' ?>"><a href="/shipping-info/">Shipping Info</a></li>
       </ul>

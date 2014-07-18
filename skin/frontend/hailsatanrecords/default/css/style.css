@@ -589,7 +589,7 @@ body {
 
 .messages {
   margin: 0 auto 20px;
-  width: 90%; }
+  width: 980px; }
   .messages li {
     background: #FFFDC8;
     padding: 7px 15px; }

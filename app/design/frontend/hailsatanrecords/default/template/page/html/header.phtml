@@ -27,8 +27,10 @@
     </nav>
     <nav class="site-nav site-nav--actions">
       <ul>
+        <!--
         <li class="site-nav__item"><a href="/customer/account/login">Log In/Register</a></li>
         <li class="site-nav__separator"></li>
+        -->
         <li class="site-nav__item <?php if ($path == '/checkout/cart/') echo 'site-nav__item--current' ?>"><a href="/checkout/cart/">Cart (<?php echo $cartCount == 0 ? 0 : $cartCount; ?>)</a></li>
         <li class="site-nav__separator"></li>
         <li class="site-nav__item <?php if ($path == '/shipping-info/') echo 'site-nav__item--current' ?>"><a href="/shipping-info/">Shipping Info</a></li>

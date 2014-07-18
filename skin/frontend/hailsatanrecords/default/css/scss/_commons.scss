@@ -3,18 +3,6 @@ $heading-color: #343434;
 $hsr-red: #ff3000;
 $hsr-black: #111;
 
-%heading-one {
-  color: $heading-color;
-  font-size: 30px;
-  font-weight: 300;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-
-  strong {
-    font-weight: 400;
-  }
-}
-
 @mixin hsr-transition($value) {
   -webkit-transition: $value;
      -moz-transition: $value;
@@ -35,4 +23,31 @@ $hsr-black: #111;
   -moz-column-gap: $gap;
   -webkit-column-count: $count;
   -webkit-column-gap: $gap;
+}
+
+%heading-one {
+  color: $heading-color;
+  font-size: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+%hsr-button {
+  background: #fff;
+  border: 1px solid #111;
+  color: #111;
+  font-family: 'Lato', sans-serif;
+  margin-right: 20px;
+  padding: 7px 15px;
+  @include hsr-transition(.2s all);
+
+  &:hover {
+    background: #111;
+    color: #fff;
+  }
 }

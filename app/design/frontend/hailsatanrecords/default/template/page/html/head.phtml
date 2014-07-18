@@ -1,3 +1,9 @@
+<?php
+  $urlString = Mage::helper('core/url')->getCurrentUrl();
+  $url = Mage::getSingleton('core/url')->parseUrl($urlString);
+  $path = $url->getPath();
+?>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,9 +18,8 @@
 <link rel="stylesheet" href="/skin/frontend/hailsatanrecords/default/css/jquery.fancybox.css">
 <link rel="stylesheet" href="/skin/frontend/hailsatanrecords/default/css/style.css">
 
-<script src="/js/mage/cookies.js"></script>
-
-<?php echo $this->getChildHtml() ?>
+<?php if (strpos($path, 'contacts') != 0 || strpos($path, 'paypal/express/review') != 0) echo $this->getCssJsHtml(); ?>
+<?php echo $this->getChildHtml(); ?>
 
 <script>
   window.setLocation = function(url) {

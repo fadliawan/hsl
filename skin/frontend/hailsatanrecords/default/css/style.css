@@ -468,6 +468,21 @@ body {
   .content h1 strong, .about-whatever h1 strong, .store h1 strong {
     font-weight: 400; }
 
+.button, .shopping-cart-table button {
+  background: #fff;
+  border: 1px solid #111;
+  color: #111;
+  font-family: 'Lato', sans-serif;
+  margin-right: 20px;
+  padding: 7px 15px;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  transition: 0.2s all; }
+  .button:hover, .shopping-cart-table button:hover {
+    background: #111;
+    color: #fff; }
+
 .site-header {
   background: #111;
   width: 100%; }
@@ -617,12 +632,14 @@ body {
     text-align: right;
     text-transform: uppercase; }
 
-#contactForm {
+#contactForm,
+#order_review_form {
   display: block;
   margin: 0 auto 50px;
   text-align: center;
   width: 498px; }
-  #contactForm .legend {
+  #contactForm .legend,
+  #order_review_form .legend {
     background: #eee;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -631,13 +648,17 @@ body {
     padding: 18px 50px;
     text-align: center;
     text-transform: uppercase; }
-  #contactForm .fieldset {
+  #contactForm .fieldset,
+  #contactForm .info-set,
+  #order_review_form .fieldset,
+  #order_review_form .info-set {
     background: #f6f6f6;
     border: 1px solid #eee;
     border-radius: 5px;
     margin-bottom: 20px;
     padding-bottom: 40px; }
-  #contactForm .buttons-set button {
+  #contactForm .buttons-set button,
+  #order_review_form .buttons-set button {
     background: #ff3000;
     border: 1px solid #ff3000;
     color: #fff;
@@ -649,23 +670,128 @@ body {
     -moz-transition: 0.1s all;
     -o-transition: 0.1s all;
     transition: 0.1s all; }
-    #contactForm .buttons-set button:hover {
+    #contactForm .buttons-set button:hover,
+    #order_review_form .buttons-set button:hover {
       background: #fff;
       color: #ff3000; }
-  #contactForm label {
+    #contactForm .buttons-set button#review_button, #contactForm .buttons-set button#update_order,
+    #order_review_form .buttons-set button#review_button,
+    #order_review_form .buttons-set button#update_order {
+      font-size: 14px;
+      padding: 8px 15px; }
+    #contactForm .buttons-set button#update_order,
+    #order_review_form .buttons-set button#update_order {
+      background: #111111;
+      border-color: #111111;
+      margin-bottom: 20px; }
+      #contactForm .buttons-set button#update_order:hover,
+      #order_review_form .buttons-set button#update_order:hover {
+        background: #fff;
+        color: #111111; }
+  #contactForm label,
+  #order_review_form label {
     display: block;
     font-size: 14px;
     margin: 0 50px;
     text-align: left; }
   #contactForm input[type="text"],
-  #contactForm textarea {
+  #contactForm textarea,
+  #contactForm select,
+  #order_review_form input[type="text"],
+  #order_review_form textarea,
+  #order_review_form select {
     background: #fff;
     border: 1px solid #eee;
+    color: #333;
     font-family: 'Lato', sans-serif;
     font-size: 14px;
     margin: 5px 50px 15px;
     padding: 7px;
     width: 380px; }
+  #contactForm .col-2 input[type="text"],
+  #contactForm .col-2 textarea,
+  #contactForm .col-2 select,
+  #order_review_form .col-2 input[type="text"],
+  #order_review_form .col-2 textarea,
+  #order_review_form .col-2 select {
+    width: 342px; }
+  #contactForm .col-2 select,
+  #order_review_form .col-2 select {
+    background: white url("img/down-arrow.png") no-repeat right 10px center;
+    width: 360px; }
+  #contactForm .validation-advice,
+  #order_review_form .validation-advice {
+    background-color: #ff3000;
+    border: 1px solid #ff3000;
+    color: #fff;
+    margin: 0 auto 15px;
+    padding: 7px 15px;
+    position: relative;
+    width: 322px; }
+    #contactForm .validation-advice:before,
+    #order_review_form .validation-advice:before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 7px 7px 7px;
+      border-color: transparent transparent #ff3000 transparent;
+      position: absolute;
+      left: 170px;
+      top: -7px; }
+  #contactForm select,
+  #order_review_form select {
+    padding: 3px;
+    margin: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #f8f8f8;
+    border: none;
+    outline: none;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    border-radius: 0;
+    font-size: 14px;
+    background: white;
+    margin: 5px auto 15px;
+    display: block;
+    border: 1px solid #eee;
+    padding: 7px; }
+  #contactForm input[type="checkbox"],
+  #order_review_form input[type="checkbox"] {
+    float: left;
+    margin-left: 50px;
+    margin-right: 15px;
+    height: 20px; }
+
+.edit-shopping-cart,
+.edit-shopping-cart:visited {
+  color: #ff3000;
+  float: left;
+  font-size: 14px;
+  margin: 10px 0 0 20px;
+  text-decoration: none; }
+  .edit-shopping-cart:hover,
+  .edit-shopping-cart:visited:hover {
+    text-decoration: underline; }
+
+#details-table {
+  margin: 0 auto;
+  width: 960px; }
+  #details-table th, #details-table td {
+    padding: 10px; }
+  #details-table th {
+    width: 70%; }
+    #details-table th .a-center {
+      width: 10%; }
+  #details-table thead tr {
+    border-bottom: 1px solid #999; }
+  #details-table tbody tr {
+    border-bottom: 1px solid #ddd; }
 
 .store h1 {
   margin-bottom: 15px;
@@ -1034,30 +1160,16 @@ h1.vinyl__title {
       text-align: left; }
   .shopping-cart-table tfoot td {
     padding-top: 20px; }
-  .shopping-cart-table button {
-    background: #fff;
-    border: 1px solid #111;
-    color: #111;
-    font-family: 'Lato', sans-serif;
-    margin-right: 20px;
-    padding: 7px 15px;
-    -webkit-transition: 0.2s all;
-    -moz-transition: 0.2s all;
-    -o-transition: 0.2s all;
-    transition: 0.2s all; }
-    .shopping-cart-table button:hover {
-      background: #111;
+  .shopping-cart-table button.shopping-cart-table__update, .shopping-cart-table button.shopping-cart-table__empty {
+    float: right;
+    margin-right: 0;
+    margin-left: 20px; }
+  .shopping-cart-table button.shopping-cart-table__update {
+    border-color: #ff3000;
+    color: #ff3000; }
+    .shopping-cart-table button.shopping-cart-table__update:hover {
+      background: #ff3000;
       color: #fff; }
-    .shopping-cart-table button.shopping-cart-table__update, .shopping-cart-table button.shopping-cart-table__empty {
-      float: right;
-      margin-right: 0;
-      margin-left: 20px; }
-    .shopping-cart-table button.shopping-cart-table__update {
-      border-color: #ff3000;
-      color: #ff3000; }
-      .shopping-cart-table button.shopping-cart-table__update:hover {
-        background: #ff3000;
-        color: #fff; }
   .shopping-cart-table a,
   .shopping-cart-table a:visited {
     color: #111;

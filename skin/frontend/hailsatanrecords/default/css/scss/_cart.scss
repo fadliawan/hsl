@@ -27,18 +27,7 @@
   }
 
   button {
-    background: #fff;
-    border: 1px solid #111;
-    color: #111;
-    font-family: 'Lato', sans-serif;
-    margin-right: 20px;
-    padding: 7px 15px;
-    @include hsr-transition(.2s all);
-
-    &:hover {
-      background: #111;
-      color: #fff;
-    }
+    @extend %hsr-button;
 
     &.shopping-cart-table__update,
     &.shopping-cart-table__empty {

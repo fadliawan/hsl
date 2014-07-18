@@ -1,0 +1,51 @@
+<?php
+  $collection = Mage::getModel('catalog/product')->getCollection();
+  $collection->addAttributeToSelect('artist');
+  $collection->addFieldToFilter('artist', 'Amateur Takes Control');
+?>
+
+<div class="band">
+  <a class="band__back-link" href="/bands/">Back to <b>bands</b></a>
+  <br>
+  <div class="band__logo">
+    <img src="/media/wysiwyg/atc/atc-logo--black.png">
+  </div>
+  <h1 class="band__title">Amateur Takes Control</h1>
+  <div class="band__description">
+    <p>Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+
+    <p>Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+
+    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.</p>
+
+    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+  </div>
+  <div class="band__photo">
+    <img src="/media/wysiwyg/atc/atc-photo.png" width="474">
+  </div>
+  <div class="band-info">
+    <div class="band-info__item">
+      <h2 class="band-info__title">Get Music from The Band</h2>
+      <ul class="band-albums">
+        <?php foreach ($collection as $_product) : ?>
+          <?php
+            // Reload the product to show custom image attributes
+            $productId = $_product->getId();
+            $_product = Mage::getModel('catalog/product')->load($productId);
+          ?>
+          <li class="band-albums__item">
+            <a class="band-albums__link" href="<?php echo $_product->getProductUrl(); ?>">
+              <img class="band-albums__cover" src="<?php echo $this->helper('catalog/image')->init($_product, 'vinyl_cover')->resize(90); ?>" width="90" height="90">
+              <p class="band-albums__title"><?php echo $_product->getAlbumTitle(); ?></p>
+              <p class="band-albums__spec"><?php echo $_product->getVinylSpec(); ?></p>
+            </a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+    <div class="band-info__item">
+      <h2 class="band-info__title">Follow The Band</h2>
+      <p class="band-social"><a href="/">Facebook</a> | <a href="/">Bandcamp</a></p>
+    </div>
+  </div>
+</div>

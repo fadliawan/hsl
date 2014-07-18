@@ -71,19 +71,21 @@
       </fieldset>
   </form>
 
-  <div class="cart-collaterals">
-    <div class="totals">
-      <?php echo $this->getChildHtml('totals'); ?>
+  <div class="cart-finals">
+    <div class="cart-collaterals">
+      <div class="totals">
+        <?php echo $this->getChildHtml('totals'); ?>
+      </div>
     </div>
-  </div>
 
-  <?php if(!$this->hasError()): ?>
-  <ul class="checkout-types">
-  <?php foreach ($this->getMethods('top_methods') as $method): ?>
-    <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-    <li><?php echo $methodHtml; ?></li>
+    <?php if(!$this->hasError()): ?>
+    <ul class="checkout-types">
+    <?php foreach ($this->getMethods('top_methods') as $method): ?>
+      <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+      <li><?php echo $methodHtml; ?></li>
+      <?php endif; ?>
+    <?php endforeach; ?>
+    </ul>
     <?php endif; ?>
-  <?php endforeach; ?>
-  </ul>
-  <?php endif; ?>
+  </div>
 </div>

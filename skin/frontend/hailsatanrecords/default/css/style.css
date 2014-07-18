@@ -1017,7 +1017,7 @@ h1.vinyl__title {
 
 .shopping-cart-table {
   margin: 0 auto 30px;
-  width: 90%; }
+  width: 980px; }
   .shopping-cart-table th {
     background: #eee;
     color: #979797;
@@ -1077,7 +1077,14 @@ h1.vinyl__title {
   line-height: 1.5em;
   margin: 0 auto 50px;
   text-align: center;
-  width: 90%; }
+  width: 980px; }
+
+.checkout-types {
+  margin: 0 auto 50px;
+  width: 980px; }
+  .checkout-types li:last-child,
+  .checkout-types .paypal-or {
+    display: none; }
 
 .bands-showcase {
   margin: 0 auto 50px;

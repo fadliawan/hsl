@@ -1,6 +1,6 @@
 .shopping-cart-table {
   margin: 0 auto 30px;
-  width: 90%;
+  width: 980px;
 
   th {
     background: #eee;
@@ -82,5 +82,15 @@
   line-height: 1.5em;
   margin: 0 auto 50px;
   text-align: center;
-  width: 90%;
+  width: 980px;
+}
+
+.checkout-types {
+  margin: 0 auto 50px;
+  width: 980px;
+
+  li:last-child,
+  .paypal-or {
+    display: none;
+  }
 }

@@ -1,1 +1,31 @@
-<div class="carousel"></div>
+<ul class="carousel">
+  <li class="carousel__1 carousel__active" data-order="1"></li>
+  <li class="carousel__2" data-order="2"></li>
+  <li class="carousel__3" data-order="3"></li>
+</ul>
+
+<script src="/skin/frontend/hailsatanrecords/default/js/jquery-1.11.1.min.js"></script>
+<script>
+  (function() {
+
+    function loopCarousel() {
+      var $items = $('.carousel').find('li');
+      var $active = $items.filter('.carousel__active');
+      var currentOrder = parseInt($active.data('order'), 10);
+
+      var nextOrder = currentOrder + 1;
+      if (nextOrder === 4) nextOrder = 1;
+      var $nextTarget = $items.filter('[data-order="' + nextOrder + '"]');
+
+      $items.removeClass('carousel__active').fadeOut(1500);
+      $nextTarget.addClass('carousel__active').fadeIn(1500);
+
+      console.log($nextTarget);
+
+      setTimeout(loopCarousel, 5000);
+    }
+
+    setTimeout(loopCarousel, 5000);
+
+  })();
+</script>

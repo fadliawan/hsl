@@ -1,0 +1,1 @@
+sass --watch skin/frontend/hailsatanrecords/default/css/scss/style.scss:skin/frontend/hailsatanrecords/default/css/style.css

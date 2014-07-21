@@ -4,13 +4,6 @@
   overflow: hidden;
   width: 100%;
 
-  .page-home & {
-    background: transparent url('img/carousel-1.jpg') no-repeat center;
-    background-size: cover;
-    height: 700px;
-    margin-top: -180px;
-  }
-
   .page-about & {
     background-color: #ececec;
   }
@@ -29,8 +22,57 @@
   }
 }
 
+// Home specific styling
+.page-home {
+  background: none;
+  
+  .site-header header {
+    z-index: 200;
+  }
+
+  .content {
+    height: 400px;
+  }
+
+  .site-footer {
+    position: relative;
+    z-index: 300;
+  }
+}
+
 .carousel {
-  text-align: center;
+  height: 700px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  z-index: 100;
+
+  li {
+    background: transparent url('img/carousel-1.jpg') no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &.carousel__1 {
+      display: block;
+    }
+
+    &.carousel__2 {
+      background-image: url('img/carousel-2.jpg');
+    }
+
+    &.carousel__3 {
+      background-image: url('img/carousel-3.jpg');
+    }
+  }
 }
 
 // Messages

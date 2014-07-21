@@ -582,11 +582,6 @@ body {
   margin: -50px auto 0;
   overflow: hidden;
   width: 100%; }
-  .page-home .site-content {
-    background: transparent url("img/carousel-1.jpg") no-repeat center;
-    background-size: cover;
-    height: 700px;
-    margin-top: -180px; }
   .page-about .site-content {
     background-color: #ececec; }
 
@@ -599,8 +594,41 @@ body {
   .content h1 {
     text-align: center; }
 
+.page-home {
+  background: none; }
+  .page-home .site-header header {
+    z-index: 200; }
+  .page-home .content {
+    height: 400px; }
+  .page-home .site-footer {
+    position: relative;
+    z-index: 300; }
+
 .carousel {
-  text-align: center; }
+  height: 700px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  z-index: 100; }
+  .carousel li {
+    background: transparent url("img/carousel-1.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    .carousel li.carousel__1 {
+      display: block; }
+    .carousel li.carousel__2 {
+      background-image: url("img/carousel-2.jpg"); }
+    .carousel li.carousel__3 {
+      background-image: url("img/carousel-3.jpg"); }
 
 .messages {
   margin: 0 auto 20px;

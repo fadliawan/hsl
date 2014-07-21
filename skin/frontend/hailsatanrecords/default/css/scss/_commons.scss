@@ -3,6 +3,9 @@ $heading-color: #343434;
 $hsr-red: #ff3000;
 $hsr-black: #111;
 
+$hsr-dark-red: #800800;
+$hsr-dark-grey: #343434;
+
 @mixin hsr-transition($value) {
   -webkit-transition: $value;
      -moz-transition: $value;

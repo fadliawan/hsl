@@ -34,7 +34,8 @@
     left: 15px;
   }
 
-  .product--tshirt:hover & {
+  .product--tshirt:hover &,
+  .product--print:hover & {
     left: 50px;
   }
 }

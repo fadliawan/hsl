@@ -18,10 +18,13 @@
   <?php endif; ?>
 
   <?php // VINYLS ?>
-  <?php if ( in_array('36', $_product->getCategoryIds()) ) : ?>
+  <?php if ( in_array('36', $_product->getCategoryIds()) || in_array('38', $_product->getCategoryIds()) ) : ?>
 
     <div class="vinyl__info">
-      <h1 class="vinyl__title"><?php echo $_product->getAlbumTitle(); ?> <b>- <?php echo $_product->getArtist(); ?></b></h1>
+      <h1 class="vinyl__title">
+        <?php if ( in_array('36', $_product->getCategoryIds()) ) { echo $_product->getAlbumTitle(); } else { echo $_product->getName(); } ?>
+        <b>- <?php echo $_product->getArtist(); ?></b>
+      </h1>
       <p class="vinyl__spec"><?php echo $_product->getVinylSpec(); ?></p>
 
       <?php if ($_product->getDescription()) : ?>
@@ -77,6 +80,7 @@
       </div>
     </div>
 
+  <?php // T-SHIRTS ?>
   <?php elseif ( in_array('37', $_product->getCategoryIds()) ) : ?>
 
     <div class="vinyl__info">

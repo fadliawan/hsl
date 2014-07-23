@@ -82,6 +82,36 @@
             </button>
           </li>
 
+        <?php elseif ( in_array('38', $_product->getCategoryIds()) ) : ?>
+
+          <li class="product product--print">
+            <img class="product__cover" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(230); ?>"
+              width="230" height="230">
+            <div class="product__price">
+              <span class="product__price-currency"><?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?></span>
+              <?php echo number_format($_product->getPrice(), 2); ?>
+            </div>
+
+            <div class="product__info">
+              <h2 class="product-info__title"><?php echo $_product->getName(); ?></h2>
+              <p class="product-info__artist"><?php echo $_product->getArtist(); ?></p>
+              <p class="product-info__spec"><?php echo $_product->getVinylSpec(); ?></p>
+            </div>
+
+            <a class="product__detail-link-area" href="<?php echo $_product->getProductUrl(); ?>"></a>
+            <a class="product__detail-link" href="<?php echo $_product->getProductUrl(); ?>">Click to view details</a>
+
+            <button type="button" class="product__cart-button"
+              onclick="setLocation('<?php echo $_product->getProductUrl(); ?>')"
+              <?php if (!$_product->isSaleable()) : ?>disabled<?php endif; ?>>
+              <?php if ($_product->isSaleable()) : ?>
+                Add to Cart
+              <?php else : ?>
+                Out of Stock
+              <?php endif; ?>
+            </button>
+          </li>
+
         <?php endif; ?>
 
     <?php endforeach; ?>

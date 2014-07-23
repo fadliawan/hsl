@@ -848,7 +848,7 @@ body {
   z-index: 200; }
   .product:hover .product__cover {
     left: 15px; }
-  .product--tshirt:hover .product__cover {
+  .product--tshirt:hover .product__cover, .product--print:hover .product__cover {
     left: 50px; }
 
 .product__vinyl {

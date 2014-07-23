@@ -22,7 +22,7 @@
 
       <?php if ($i++%$_columnCount==0): ?>
       <ul class="product-catalog">
-      <?php endif ?>
+      <?php endif; ?>
 
         <li class="product">
           <img class="product__cover" src="<?php echo $this->helper('catalog/image')->init($_product, 'vinyl_cover')->resize(230); ?>"
@@ -43,14 +43,22 @@
           <a class="product__detail-link-area" href="<?php echo $_product->getProductUrl(); ?>"></a>
           <a class="product__detail-link" href="<?php echo $_product->getProductUrl(); ?>">Click to view details</a>
 
-          <button type="button" class="product__cart-button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">Add to Cart</button>
+          <button type="button" class="product__cart-button"
+            onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"
+            <?php if (!$_product->isSaleable()) : ?>disabled<?php endif; ?>>
+            <?php if ($_product->isSaleable()) : ?>
+              Add to Cart
+            <?php else : ?>
+              Out of Stock
+            <?php endif; ?>
+          </button>
         </li>
 
       <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
       </ul>
-      <?php endif ?>
+      <?php endif; ?>
 
-    <?php endforeach ?>
+    <?php endforeach; ?>
   </div>
 <?php endif; ?>
 

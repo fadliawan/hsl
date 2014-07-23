@@ -41,7 +41,14 @@
             <div class="vinyl-cart__reduce-item js-quantity-reduce">&#9660;</div>
           </div>
           <input type="hidden" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1; ?>" class="qty js-quantity-input" />
-          <button class="vinyl-cart__add" type="submit">Add to Cart</button>
+          <button class="vinyl-cart__add" type="submit"
+            <?php if (!$_product->isSaleable()) : ?>disabled<?php endif; ?>>
+            <?php if ($_product->isSaleable()) : ?>
+              Add to Cart
+            <?php else : ?>
+              Out of Stock
+            <?php endif; ?>
+          </button>
         </div>
         <div class="vinyl-price">
           <div class="vinyl-price__amount">

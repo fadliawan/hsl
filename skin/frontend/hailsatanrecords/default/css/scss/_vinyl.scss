@@ -259,6 +259,10 @@ h1.vinyl__title {
       background-color: #111;
       color: #fff;
     }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -266,7 +270,7 @@ h1.vinyl__title {
 .vinyl-size__chart-link:visited {
   color: $hsr-red;
   display: block;
-  float: left;
+  float: right;
   font-size: 14px;
   line-height: 32px;
   text-decoration: none;

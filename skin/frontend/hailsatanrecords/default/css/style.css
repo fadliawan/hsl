@@ -1204,12 +1204,14 @@ h1.vinyl__title {
     .vinyl-size__selector li:hover, .vinyl-size__selector li.vinyl-size__selector--selected {
       background-color: #111;
       color: #fff; }
+    .vinyl-size__selector li:last-child {
+      margin-right: 0; }
 
 .vinyl-size__chart-link,
 .vinyl-size__chart-link:visited {
   color: #ff3000;
   display: block;
-  float: left;
+  float: right;
   font-size: 14px;
   line-height: 32px;
   text-decoration: none; }

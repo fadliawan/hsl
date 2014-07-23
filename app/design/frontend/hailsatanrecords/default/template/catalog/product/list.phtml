@@ -102,7 +102,7 @@
             <a class="product__detail-link" href="<?php echo $_product->getProductUrl(); ?>">Click to view details</a>
 
             <button type="button" class="product__cart-button"
-              onclick="setLocation('<?php echo $_product->getProductUrl(); ?>')"
+              onclick="setLocation('<?php echo $this->getAddToCartUrl($_product); ?>')"
               <?php if (!$_product->isSaleable()) : ?>disabled<?php endif; ?>>
               <?php if ($_product->isSaleable()) : ?>
                 Add to Cart

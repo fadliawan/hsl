@@ -17,62 +17,148 @@
     </div>
   <?php endif; ?>
 
-  <div class="vinyl__info">
-    <h1 class="vinyl__title"><?php echo $_product->getAlbumTitle(); ?> <b>- <?php echo $_product->getArtist(); ?></b></h1>
-    <p class="vinyl__spec"><?php echo $_product->getVinylSpec(); ?></p>
+  <?php // VINYLS ?>
+  <?php if ( in_array('36', $_product->getCategoryIds()) ) : ?>
 
-    <?php if ($_product->getDescription()) : ?>
-    <div class="vinyl__description">
-      <?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?>
-    </div>
-    <?php endif; ?>
+    <div class="vinyl__info">
+      <h1 class="vinyl__title"><?php echo $_product->getAlbumTitle(); ?> <b>- <?php echo $_product->getArtist(); ?></b></h1>
+      <p class="vinyl__spec"><?php echo $_product->getVinylSpec(); ?></p>
 
-    <div class="vinyl__actions">
-      <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" class="js-product-addtocart-form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
-        <?php echo $this->getBlockHtml('formkey') ?>
-        <div class="no-display">
-            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
-            <input type="hidden" name="related_product" id="related-products-field" value="" />
-        </div>
-        <div class="vinyl-cart">
-          <div class="vinyl-cart__number js-quantity-text"><?php echo $this->getProductDefaultQty() * 1; ?></div>
-          <div class="vinyl-cart__add-reduce">
-            <div class="vinyl-cart__add-item js-quantity-add">&#9650;</div>
-            <div class="vinyl-cart__reduce-item js-quantity-reduce">&#9660;</div>
-          </div>
-          <input type="hidden" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1; ?>" class="qty js-quantity-input" />
-          <button class="vinyl-cart__add" type="submit"
-            <?php if (!$_product->isSaleable()) : ?>disabled<?php endif; ?>>
-            <?php if ($_product->isSaleable()) : ?>
-              Add to Cart
-            <?php else : ?>
-              Out of Stock
-            <?php endif; ?>
-          </button>
-        </div>
-        <div class="vinyl-price">
-          <div class="vinyl-price__amount">
-            <span class="vinyl-price__currency"><?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?></span>
-            <span class="js-vinyl-price"><?php echo number_format($_product->getPrice(), 2); ?></span>
-          </div>
-          <div class="vinyl-price__label">Total</div>
-          <p class="vinyl-price__shipping-info">Shipping costs are calculated when you Checkout</p>
-        </div>
-      </form>
-
-      <div class="vinyl-share">
-        <p class="vinyl-share__text">Share this product with your friends</p>
-        <ul class="vinyl-share__media">
-          <li><a href="/">Facebook</a></li>
-          <li><a href="/">Twitter</a></li>
-          <li><a href="/">Pinterest</a></li>
-        </ul>
+      <?php if ($_product->getDescription()) : ?>
+      <div class="vinyl__description">
+        <?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?>
       </div>
-      <div class="vinyl-links">
-        <a href="/store.html">back to store</a> | <a href="/checkout/cart/">checkout</a>
+      <?php endif; ?>
+
+      <div class="vinyl__actions">
+        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" class="js-product-addtocart-form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+          <?php echo $this->getBlockHtml('formkey') ?>
+          <div class="no-display">
+              <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+              <input type="hidden" name="related_product" id="related-products-field" value="" />
+          </div>
+          <div class="vinyl-cart">
+            <div class="vinyl-cart__number js-quantity-text"><?php echo $this->getProductDefaultQty() * 1; ?></div>
+            <div class="vinyl-cart__add-reduce">
+              <div class="vinyl-cart__add-item js-quantity-add">&#9650;</div>
+              <div class="vinyl-cart__reduce-item js-quantity-reduce">&#9660;</div>
+            </div>
+            <input type="hidden" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1; ?>" class="qty js-quantity-input" />
+            <button class="vinyl-cart__add" type="submit"
+              <?php if (!$_product->isSaleable()) : ?>disabled<?php endif; ?>>
+              <?php if ($_product->isSaleable()) : ?>
+                Add to Cart
+              <?php else : ?>
+                Out of Stock
+              <?php endif; ?>
+            </button>
+          </div>
+          <div class="vinyl-price">
+            <div class="vinyl-price__amount">
+              <span class="vinyl-price__currency"><?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?></span>
+              <span class="js-vinyl-price"><?php echo number_format($_product->getPrice(), 2); ?></span>
+            </div>
+            <div class="vinyl-price__label">Total</div>
+            <p class="vinyl-price__shipping-info">Shipping costs are calculated when you Checkout</p>
+          </div>
+        </form>
+
+        <div class="vinyl-share">
+          <p class="vinyl-share__text">Share this product with your friends</p>
+          <ul class="vinyl-share__media">
+            <li><a href="/">Facebook</a></li>
+            <li><a href="/">Twitter</a></li>
+            <li><a href="/">Pinterest</a></li>
+          </ul>
+        </div>
+        <div class="vinyl-links">
+          <a href="/store.html">back to store</a> | <a href="/checkout/cart/">checkout</a>
+        </div>
       </div>
     </div>
-  </div>
+
+  <?php elseif ( in_array('37', $_product->getCategoryIds()) ) : ?>
+
+    <div class="vinyl__info">
+      <h1 class="vinyl__title vinyl__title--tshirt"><?php echo $_product->getName(); ?></h1>
+      <p class="vinyl__spec vinyl__spec--tshirt"><?php echo $_product->getModel(); ?></p>
+
+      <?php if ($_product->getDescription()) : ?>
+      <div class="vinyl__description">
+        <?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?>
+      </div>
+      <?php endif; ?>
+
+      <div class="vinyl__actions">
+        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" class="js-product-addtocart-form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+          <?php echo $this->getBlockHtml('formkey') ?>
+          <div class="vinyl__no-display">
+              <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+              <input type="hidden" name="related_product" id="related-products-field" value="" />
+              <?php
+                // use your own attribute code here 
+                $attribute_code = "shirt_size";
+                $attribute_details = Mage::getSingleton("eav/config")->getAttribute("catalog_product", $attribute_code);
+                $attribute_options = $attribute_details->getSource()->getAllOptions(false);
+              ?>
+              <select class="js-vinyl-size-dropdown" name="super_attribute[<?php echo $attribute_details->getAttributeId(); ?>]">
+                <?php foreach ($attribute_options as $_option) : ?>
+                  <option value="<?php echo $_option["value"] ?>" <?php if ($_option["value"] == '99') echo 'selected' ?>><?php echo $_option["label"] ?></option>
+                <?php endforeach; ?>
+              </select>
+          </div>
+          <div class="vinyl-size">
+            <div class="vinyl-size__label">Size</div>
+            <ul class="vinyl-size__selector js-vinyl-size-selector">
+              <li data-size="100">S</li>
+              <li data-size="99" class="vinyl-size__selector--selected">M</li>
+              <li data-size="98">L</li>
+              <li data-size="125">XL</li>
+            </ul>
+            <a href="/" class="vinyl-size__chart-link">Size & Fit</a>
+          </div>
+
+          <div class="vinyl-cart">
+            <div class="vinyl-cart__number js-quantity-text"><?php echo $this->getProductDefaultQty() * 1; ?></div>
+            <div class="vinyl-cart__add-reduce">
+              <div class="vinyl-cart__add-item js-quantity-add">&#9650;</div>
+              <div class="vinyl-cart__reduce-item js-quantity-reduce">&#9660;</div>
+            </div>
+            <input type="hidden" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1; ?>" class="qty js-quantity-input" />
+            <button class="vinyl-cart__add" type="submit"
+              <?php if (!$_product->isSaleable()) : ?>disabled<?php endif; ?>>
+              <?php if ($_product->isSaleable()) : ?>
+                Add to Cart
+              <?php else : ?>
+                Out of Stock
+              <?php endif; ?>
+            </button>
+          </div>
+          <div class="vinyl-price">
+            <div class="vinyl-price__amount">
+              <span class="vinyl-price__currency"><?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?></span>
+              <span class="js-vinyl-price"><?php echo number_format($_product->getPrice(), 2); ?></span>
+            </div>
+            <div class="vinyl-price__label">Total</div>
+            <p class="vinyl-price__shipping-info">Shipping costs are calculated when you Checkout</p>
+          </div>
+        </form>
+
+        <div class="vinyl-share">
+          <p class="vinyl-share__text">Share this product with your friends</p>
+          <ul class="vinyl-share__media">
+            <li><a href="/">Facebook</a></li>
+            <li><a href="/">Twitter</a></li>
+            <li><a href="/">Pinterest</a></li>
+          </ul>
+        </div>
+        <div class="vinyl-links">
+          <a href="/store.html">back to store</a> | <a href="/checkout/cart/">checkout</a>
+        </div>
+      </div>
+    </div>
+
+  <?php endif; ?>
 </div>
 
 <script src="/skin/frontend/hailsatanrecords/default/js/jquery-1.11.1.min.js"></script>
@@ -144,6 +230,18 @@
         alert("Please add quantity.");
         return false;
       }
+    });
+
+    $('.js-vinyl-size-selector').on('click', 'li', function() {
+      var $this = $(this);
+      var selectedSizeId = $this.data('size');
+      // console.log('button value:', $(this).data('size'));
+
+      $this.siblings().removeClass('vinyl-size__selector--selected');
+      $this.addClass('vinyl-size__selector--selected');
+      $('.js-vinyl-size-dropdown').val(selectedSizeId);
+
+      // console.log('dropdown value:', $('.js-vinyl-size-dropdown')[0].value);
     });
 
   })();

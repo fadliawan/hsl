@@ -19,6 +19,9 @@
     &.shopping-cart-table__product {
       padding-left: 25px;
       text-align: left;
+
+      dt { font-weight: 700;  }
+      dd { margin-left: 20px; }
     }
   }
 

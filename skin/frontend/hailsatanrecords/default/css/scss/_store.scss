@@ -33,6 +33,10 @@
   .product:hover & {
     left: 15px;
   }
+
+  .product--merch:hover & {
+    left: 50px;
+  }
 }
 
 .product__vinyl {
@@ -101,6 +105,10 @@
 
 .product-info__spec {
   margin-bottom: 0;
+
+  .product--merch & {
+    margin-bottom: 18px;
+  }
 }
 
 .product__detail-link,

@@ -848,6 +848,8 @@ body {
   z-index: 200; }
   .product:hover .product__cover {
     left: 15px; }
+  .product--merch:hover .product__cover {
+    left: 50px; }
 
 .product__vinyl {
   left: 50px;
@@ -916,6 +918,8 @@ body {
 
 .product-info__spec {
   margin-bottom: 0; }
+  .product--merch .product-info__spec {
+    margin-bottom: 18px; }
 
 .product__detail-link,
 .product__detail-link:visited {

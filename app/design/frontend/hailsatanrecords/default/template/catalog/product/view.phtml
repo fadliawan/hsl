@@ -119,7 +119,10 @@
               <li data-size="98">L</li>
               <li data-size="125">XL</li>
             </ul>
-            <a href="/" class="vinyl-size__chart-link">Size & Fit</a>
+            <a href="#vinyl-size__chart" class="vinyl-size__chart-link js-vinyl-size-link">Size & Fit</a>
+            <div id="vinyl-size__chart" style="display: none;">
+              <img src="/media/wysiwyg/size-charts/HSR_SizeChart_<?php if ( !strpos(strtolower($_product->getModel()), 'raglan') ) { echo 'Tshirt'; } else { echo 'Raglan'; }; ?>.png" width="740" height="430">
+            </div>
           </div>
 
           <div class="vinyl-cart">
@@ -171,6 +174,7 @@
 <script>
   (function() {
 
+    // Gallery
     var $vinylSlider = $('.js-vinyl-slider');
 
     $vinylSlider.lightSlider({
@@ -190,6 +194,8 @@
         var $vinylFancybox = $('.js-vinyl-fancybox');
 
         $vinylFancybox.fancybox({
+          openEffect: 'elastic',
+          closeEffect: 'elastic',
           loop: false
         });
 
@@ -204,6 +210,7 @@
       }
     });
 
+    // Quantity adder/reducer
     var $qtyInput = $('.js-quantity-input');
     var basePrice = <?php echo number_format($_product->getPrice(), 2); ?>;
 
@@ -236,17 +243,18 @@
       }
     });
 
+    // Size selector
     $('.js-vinyl-size-selector').on('click', 'li', function() {
       var $this = $(this);
       var selectedSizeId = $this.data('size');
-      // console.log('button value:', $(this).data('size'));
 
       $this.siblings().removeClass('vinyl-size__selector--selected');
       $this.addClass('vinyl-size__selector--selected');
       $('.js-vinyl-size-dropdown').val(selectedSizeId);
-
-      // console.log('dropdown value:', $('.js-vinyl-size-dropdown')[0].value);
     });
+
+    // Size chart popup
+    $('.js-vinyl-size-link').fancybox();
 
   })();
 </script>

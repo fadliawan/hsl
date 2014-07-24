@@ -111,7 +111,21 @@ h1.band__title {
   height: 250px;
   line-height: 1.5em;
   margin-bottom: 20px;
-  @include hsr-column(2, 30px);
+  overflow: hidden;
+
+  .band--atc & {
+    height: 400px;
+  }
+}
+
+.band__description__first-col {
+  float: left;
+  width: 474px;
+}
+
+.band__description__second-col {
+  float: right;
+  width: 474px;
 }
 
 .band__photo {

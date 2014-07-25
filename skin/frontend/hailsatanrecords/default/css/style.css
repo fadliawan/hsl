@@ -456,6 +456,7 @@ ul, ol {
    Modify as content requires.
    ========================================================================== */
 body {
+  background: #111;
   border-top: 8px solid #111;
   font-family: 'Lato', sans-serif; }
 
@@ -594,21 +595,19 @@ body {
   .content h1 {
     text-align: center; }
 
-.page-home {
-  background: none; }
-  .page-home .site-header header {
-    z-index: 200; }
-  .page-home .content {
-    height: 400px; }
-  .page-home .site-footer {
-    position: relative;
-    z-index: 300; }
+.page-home .site-header header {
+  z-index: 200; }
+.page-home .content {
+  height: 562px; }
+.page-home .site-footer {
+  position: relative;
+  z-index: 300; }
 
 .carousel {
   height: 700px;
   left: 0;
   position: absolute;
-  top: 8px;
+  top: 80px;
   width: 100%;
   z-index: 100; }
   .carousel li {

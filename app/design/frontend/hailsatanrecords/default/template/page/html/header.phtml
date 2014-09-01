@@ -4,10 +4,11 @@
   $path = $url->getPath();
   $cartCount = $this->helper('checkout/cart')->getSummaryCount();
 ?>
+<div class="site-nav__mobile-overlay"></div>
 <div class="site-header">
   <header>
     <div class="site-logo"><a href="/">Homepage</a></div>
-    <nav class="site-nav site-nav--first">
+    <nav class="site-nav site-nav--first js-site-nav">
       <ul>
         <li class="site-nav__item <?php if ($path == '/') echo 'site-nav__item--current' ?>"><a href="/">Home</a></li>
         <li class="site-nav__separator"></li>
@@ -16,7 +17,7 @@
         <li class="site-nav__item <?php if ($path == '/bands/') echo 'site-nav__item--current' ?>"><a href="/bands/">Bands</a></li>
       </ul>
     </nav>
-    <nav class="site-nav site-nav--last">
+    <nav class="site-nav site-nav--last js-site-nav">
       <ul>
         <li class="site-nav__item <?php if ($path == '/updates/') echo 'site-nav__item--current' ?>"><a href="/updates/">Updates</a></li>
         <li class="site-nav__separator"></li>
@@ -25,7 +26,7 @@
         <li class="site-nav__item <?php if ($path == '/contacts/') echo 'site-nav__item--current' ?>"><a href="/contacts/">Contact</a></li>
       </ul>
     </nav>
-    <nav class="site-nav site-nav--actions">
+    <nav class="site-nav site-nav--actions js-site-nav">
       <ul>
         <!--
         <li class="site-nav__item"><a href="/customer/account/login">Log In/Register</a></li>
@@ -36,5 +37,6 @@
         <li class="site-nav__item <?php if ($path == '/shipping-info/') echo 'site-nav__item--current' ?>"><a href="/shipping-info/">Shipping Info</a></li>
       </ul>
     </nav>
+    <div class="site-nav__mobile-button js-menu-button"></div>
   </header>
 </div>

@@ -1,6 +1,6 @@
 .site-content {
   background: #fff;
-  margin: -50px auto 0;
+  margin: 0 auto;
   overflow: hidden;
   width: 100%;
 
@@ -14,7 +14,7 @@
   min-height: 300px;
   overflow: hidden;
   padding-top: 80px;
-  width: 1020px;
+  // width: 1020px;
 
   h1 {
     @extend %heading-one;
@@ -71,6 +71,12 @@
       background-image: url('img/carousel-3.jpg');
     }
   }
+}
+
+.home-link-to-store {
+  display: block;
+  height: 580px;
+  margin: 120px auto 0;
 }
 
 // Messages
@@ -337,4 +343,12 @@
 
 @media only screen and (min-width: 1020px) {
   // Tablet landscape + Desktop
+
+  .site-content {
+    margin: -50px auto 0;
+  }
+
+  .home-link-to-store {
+    width: 1040px;
+  }
 }

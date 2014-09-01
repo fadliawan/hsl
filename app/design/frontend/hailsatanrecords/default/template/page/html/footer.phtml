@@ -67,3 +67,17 @@
     </div>
   </footer>
 </div>
+
+<script>
+  var menuButton = document.querySelectorAll('.js-menu-button')[0];
+  var navs = document.querySelectorAll('.js-site-nav');
+  menuButton.addEventListener('click', function() {
+    for (var i = 0, len = navs.length; i < len; i++) {
+      if (navs[i].className.indexOf('shown') !== -1) {
+        navs[i].className = navs[i].className.replace('shown', '');
+      } else {
+        navs[i].className += ' shown';
+      }
+    }
+  }, false);
+</script>

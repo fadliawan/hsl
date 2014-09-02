@@ -722,7 +722,7 @@ body {
 .about-whatever {
   border: 10px solid #fff;
   margin-bottom: 60px;
-  padding: 50px 265px 50px 120px;
+  padding: 10px 15px;
   position: relative; }
   .about-whatever h1 {
     text-align: left; }
@@ -737,7 +737,6 @@ body {
     font-size: 22px;
     font-weight: 300;
     margin: 0;
-    position: absolute;
     right: 15px;
     text-align: right;
     text-transform: uppercase; }
@@ -746,8 +745,7 @@ body {
 #order_review_form {
   display: block;
   margin: 0 auto 50px;
-  text-align: center;
-  width: 498px; }
+  text-align: center; }
   #contactForm .legend,
   #order_review_form .legend {
     background: #eee;
@@ -802,7 +800,7 @@ body {
   #order_review_form label {
     display: block;
     font-size: 14px;
-    margin: 0 50px;
+    margin: 0 10px;
     text-align: left; }
   #contactForm input[type="text"],
   #contactForm textarea,
@@ -815,9 +813,9 @@ body {
     color: #333;
     font-family: 'Lato', sans-serif;
     font-size: 14px;
-    margin: 5px 50px 15px;
+    margin: 5px 10px 15px;
     padding: 7px;
-    width: 380px; }
+    width: 90%; }
   #contactForm .col-2 input[type="text"],
   #contactForm .col-2 textarea,
   #contactForm .col-2 select,
@@ -1639,7 +1637,27 @@ h1.band__title {
     width: 1020px; }
 
   .home-link-to-store {
-    width: 1040px; } }
+    width: 1040px; }
+
+  .about-whatever {
+    padding: 50px 265px 50px 120px; }
+    .about-whatever blockquote {
+      position: absolute; }
+
+  #contactForm,
+  #order_review_form {
+    width: 498px; }
+    #contactForm label,
+    #order_review_form label {
+      margin: 0 50px; }
+    #contactForm input[type="text"],
+    #contactForm textarea,
+    #contactForm select,
+    #order_review_form input[type="text"],
+    #order_review_form textarea,
+    #order_review_form select {
+      margin: 5px 50px 15px;
+      width: 380px; } }
 .site-footer {
   background: #111111;
   border-top: 2px solid #ff3000;

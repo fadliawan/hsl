@@ -1,19 +1,14 @@
 .bands-showcase {
   margin: 0 auto 50px;
   overflow: hidden;
-  width: 980px;
 }
 
 .bands-showcase__item {
-  float: left;
-  height: 304px;
+  height: 204px;
+  margin: 0 auto 30px;
   overflow: hidden;
   position: relative;
-  width: 478px;
-
-  &:nth-child(2n+2) {
-    float: right;
-  }
+  width: 320px;
 }
 
 .bands-showcase__link {
@@ -31,7 +26,7 @@
   position: absolute;
   text-align: center;
   text-transform: uppercase;
-  width: 474px;
+  width: 320px;
 }
 
 .bands-showcase__name-bg {
@@ -41,7 +36,7 @@
   left: 2px;
   @include hsr-transition(.3s all);
   position: absolute;
-  width: 474px;
+  width: 316px;
 
   .bands-showcase__item:hover & {
     bottom: 2px;
@@ -50,19 +45,20 @@
 
 .bands-showcase__logo {
   background: rgba(0, 0, 0, .7);
-  height: 250px;
+  height: 150px;
   left: 2px;
   opacity: 0;
   position: absolute;
   text-align: center;
   top: 2px;
   @include hsr-transition(.3s all);
-  width: 474px;
+  width: 316px;
 
   img {
     position: relative;
     top: 50%;
     @include hsr-transform(translateY(-50%));
+    width: 150px;
   }
 
   .bands-showcase__item:hover & {
@@ -73,6 +69,7 @@
 .bands-showcase__member-pic {
   border: 2px solid transparent;
   @include hsr-transition(.3s all);
+  width: 316px;
 
   .bands-showcase__item:hover & {
     border: 2px solid $hsr-red;
@@ -82,7 +79,6 @@
 .band {
   margin: 0 auto 50px;
   overflow: hidden;
-  width: 980px;
 }
 
 .band__back-link,
@@ -97,45 +93,41 @@
 }
 
 .band__logo {
+  margin-top: 20px;
   text-align: center;
+
+  img {
+    width: 150px;
+  }
 }
 
 h1.band__title {
   margin-top: 30px;
-  text-align: left;
   text-transform: none;
 }
 
 .band__description {
   font-size: 14px;
-  height: 250px;
   line-height: 1.5em;
   margin-bottom: 20px;
   overflow: hidden;
-
-  .band--atc & {
-    height: 400px;
-  }
 }
 
-.band__description__first-col {
-  float: left;
-  width: 474px;
-}
-
+.band__description__first-col,
 .band__description__second-col {
-  float: right;
-  width: 474px;
+  padding: 0 10px;
 }
 
 .band__photo {
-  float: left;
-  width: 474px;
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+  }
 }
 
 .band-info {
-  float: right;
-  width: 474px;
+
 }
 
 .band-info__title {
@@ -156,10 +148,13 @@ h1.band__title {
 }
 
 .band-albums__item {
+  box-sizing: border-box;
   display: block;
   float: left;
+  margin-bottom: 10px;
+  padding: 0 5px;
   @include hsr-transition(.2s all);
-  width: 215px;
+  width: 100%;
 
   &:nth-child(2n+2) {
     float: right;
@@ -203,5 +198,105 @@ h1.band__title {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  // Mobile landscape + Tablet portrait
+}
+
+@media only screen and (min-width: 1020px) {
+  // Tablet landscape + Desktop
+
+  .bands-showcase {
+    width: 980px;
+  }
+
+  .bands-showcase__item {
+    float: left;
+    height: 304px;
+    margin: 0;
+    width: 478px;
+
+    &:nth-child(2n+2) {
+      float: right;
+    }
+  }
+
+  .bands-showcase__name {
+    width: 474px;
+  }
+
+  .bands-showcase__name-bg {
+    width: 474px;
+  }
+
+  .bands-showcase__logo {
+    height: 250px;
+    width: 474px;
+
+    img {
+      width: auto;
+    }
+  }
+
+  .bands-showcase__member-pic {
+    width: 474px;
+  }
+
+  .band {
+    width: 980px;
+  }
+
+  .band__logo {
+    margin: 0;
+
+    img {
+      width: auto;
+    }
+  }
+
+  h1.band__title {
+    text-align: left;
+  }
+
+  .band__description {
+    height: 250px;
+
+    .band--atc & {
+      height: 400px;
+    }
+  }
+
+  .band__description__first-col,
+  .band__description__second-col {
+    padding: 0;
+  }
+
+  .band__description__first-col {
+    float: left;
+    width: 474px;
+  }
+
+  .band__description__second-col {
+    float: right;
+    width: 474px;
+  }
+
+  .band__photo {
+    float: left;
+    margin-bottom: 0;
+    width: 474px;
+  }
+
+  .band-info {
+    float: right;
+    width: 474px;
+  }
+
+  .band-albums__item {
+    margin-bottom: 0;
+    padding: 0;
+    width: 215px;
   }
 }

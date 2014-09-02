@@ -1,11 +1,10 @@
 .vinyl {
   margin: 40px auto 90px;
   overflow: hidden;
-  width: 980px;
 }
 
 .vinyl__gallery {
-  float: left;
+  margin: 0 auto 30px;
   position: relative;
   width: 300px;
 }
@@ -32,8 +31,7 @@
 }
 
 .vinyl__info {
-  float: right;
-  width: 640px;
+  
 }
 
 h1.vinyl__title {
@@ -41,7 +39,7 @@ h1.vinyl__title {
   font-weight: 300;
   line-height: 1em;
   margin-bottom: .3em;
-  text-align: left;
+  text-align: center;
   text-transform: none;
 
   b {
@@ -54,20 +52,20 @@ h1.vinyl__title {
   font-style: italic;
   font-weight: 400;
   margin-bottom: 1em;
+  text-align: center;
 }
 
 .vinyl__description {
   box-sizing: border-box;
   color: #111;
-  float: left;
   font-size: 14px;
   line-height: 1.4em;
-  padding-right: 25px;
-  width: 310px;
+  margin-bottom: 30px;
+  padding: 0 25px;
 }
 
 .vinyl__actions {
-  float: right;
+  margin: 0 auto;
   width: 310px;
 }
 
@@ -278,4 +276,48 @@ h1.vinyl__title {
 
 .vinyl__no-display {
   display: none;
+}
+
+@media only screen and (min-width: 480px) {
+  // Mobile landscape + Tablet portrait
+}
+
+@media only screen and (min-width: 1020px) {
+  // Tablet landscape + Desktop
+
+  .vinyl {
+    margin: 40px auto 90px;
+    overflow: hidden;
+    width: 980px;
+  }
+
+  .vinyl__gallery {
+    float: left;
+    margin: 0;
+  }
+
+  .vinyl__info {
+    float: right;
+    width: 640px;
+  }
+
+  h1.vinyl__title {
+    text-align: left;
+  }
+
+  .vinyl__spec {
+    text-align: left;
+  }
+
+  .vinyl__description {
+    float: left;
+    margin-bottom: 0;
+    padding-left: 0;
+    width: 310px;
+  }
+
+  .vinyl__actions {
+    float: right;
+    margin: 0;
+  }
 }

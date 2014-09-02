@@ -13,8 +13,7 @@
   margin: 0 auto;
   min-height: 300px;
   overflow: hidden;
-  padding-top: 80px;
-  // width: 1020px;
+  padding-top: 20px;
 
   h1 {
     @extend %heading-one;
@@ -349,6 +348,7 @@
   }
 
   .content {
+    padding-top: 80px;
     width: 1020px;
   }
 

@@ -1549,6 +1549,9 @@ h1.band__title {
   .site-content {
     margin: -50px auto 0; }
 
+  .content {
+    width: 1020px; }
+
   .home-link-to-store {
     width: 1040px; } }
 .site-footer {

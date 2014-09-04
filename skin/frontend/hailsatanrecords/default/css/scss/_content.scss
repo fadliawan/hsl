@@ -82,7 +82,7 @@
 
 .messages {
   margin: 0 auto 20px;
-  width: 980px;
+  width: 100%;
 
   li {
     background: #FFFDC8;
@@ -377,5 +377,11 @@
       margin: 5px 50px 15px;
       width: 380px;
     }
+  }
+
+  // Messages
+
+  .messages {
+    width: 980px;
   }
 }

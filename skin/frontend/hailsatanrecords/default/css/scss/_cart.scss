@@ -1,6 +1,6 @@
 .shopping-cart-table {
   margin: 0 auto 30px;
-  width: 980px;
+  width: 100%;
 
   th {
     background: #eee;
@@ -10,6 +10,20 @@
     text-align: center;
     text-transform: uppercase;
   }
+
+  /* BEGIN: Hide product name and base price on mobile */
+  th, td {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+
+  th, td {
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+  /* END: Hide product name and base price on mobile */
 
   tbody tr td {
     border-bottom: 1px solid #eee;
@@ -32,9 +46,16 @@
   button {
     @extend %hsr-button;
 
+    &.btn-continue {
+      display: block;
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+
     &.shopping-cart-table__update,
     &.shopping-cart-table__empty {
-      float: right;
+      display: block;
+      margin-bottom: 10px;
       margin-right: 0;
       margin-left: 20px;
     }
@@ -58,7 +79,6 @@
 }
 
 .totals {
-  float: left;
   font-size: 18px;
   line-height: 30px;
 
@@ -77,7 +97,6 @@
 }
 
 .checkout-types {
-  float: right;
   margin-top: 13px;
 
   li:last-child,
@@ -88,6 +107,62 @@
 
 .cart-finals {
   margin: 0 auto 50px;
+  margin-left: 20px;
   overflow: hidden;
-  width: 980px;
+  width: 100%;
 }
+
+@media only screen and (min-width: 480px) {
+  // Mobile landscape + Tablet portrait
+}
+
+@media only screen and (min-width: 1020px) {
+  // Tablet landscape + Desktop
+
+  .shopping-cart-table {
+    width: 980px;
+
+    /* BEGIN: Show product name and base price on desktop */
+    th, td {
+      &:nth-child(2) {
+        display: table-cell;
+      }
+    }
+
+    th, td {
+      &:nth-child(3) {
+        display: table-cell;
+      }
+    }
+    /* END: Show product name and base price on desktop */
+
+    button {
+      &.btn-continue {
+        display: inline;
+        margin-left: 0;
+        margin-bottom: 0;
+      }
+
+      &.shopping-cart-table__update,
+      &.shopping-cart-table__empty {
+        display: inline;
+        float: right;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .cart-finals {
+    margin-left: auto;
+    width: 980px;
+  }
+
+  .totals {
+    float: left;
+  }
+
+  .checkout-types {
+    float: right;
+  }
+}
+

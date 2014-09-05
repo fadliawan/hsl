@@ -38,9 +38,9 @@ $shippingAddress = $this->getShippingAddress();
 //]]>
 </script>
 <div class="paypal-review-order">
-    <form method="post" id="order_review_form" action="<?php echo $this->getPlaceOrderUrl() ?>" style="width: 980px;">
+    <form method="post" id="order_review_form" action="<?php echo $this->getPlaceOrderUrl() ?>">
     <?php if(!$billingBlock->isCustomerLoggedIn()): ?>
-        <div class="info-set col2-set" style="width: 498px; margin: 0 auto 50px;">
+        <div class="info-set col2-set pp-review-customer-email">
             <h2 class="legend"><?php echo $this->__('Customer Information') ?></h2>
             <ul class="form-list form-list-narrow">
                 <li id="customer-info-form" class="address-form">
@@ -55,7 +55,7 @@ $shippingAddress = $this->getShippingAddress();
         </div>
     <?php endif ?>
     <div class="info-set col2-set" style="border: none; background: none;">
-        <div class="info-set col-2" id="billing-address" style="width: 460px; float: left;">
+        <div class="info-set col-2 pp-review-billing-address" id="billing-address">
             <h2 class="legend"><?php echo $this->__('Billing Address') ?></h2>
             <?php if ($shippingAddress): ?>
                 <?php echo $billingBlock->setShowAsShippingCheckbox(true)->toHtml(); ?>
@@ -64,7 +64,7 @@ $shippingAddress = $this->getShippingAddress();
             <?php endif; ?>
         </div>
     <?php if ($shippingAddress): ?>
-        <div class="info-set col-2" id="shipping-address" style="width: 460px; float: right;">
+        <div class="info-set col-2 pp-review-shipping-address" id="shipping-address">
             <h2 class="legend"><?php echo $this->__('Shipping Address') ?></h2>
             <?php echo $this->getChild('shipping')->setFieldNamePrefix('shipping')->setHideEmailAddress(true)->toHtml(); ?>
         </div>
@@ -72,7 +72,7 @@ $shippingAddress = $this->getShippingAddress();
 
     <br style="clear: both;">
 
-    <div class="info-set" style="width: 980px; float: left;">
+    <div class="info-set pp-review-order-details">
         <h2 class="legend">
           <?php echo $this->__('Items in Your Shopping Cart') ?><br>
         </h2>
@@ -82,7 +82,7 @@ $shippingAddress = $this->getShippingAddress();
         <a href="<?php echo $this->getUrl('checkout/cart') ?>" class="edit-shopping-cart"><?php echo $this->__('Edit Shopping Cart') ?></a>
     </div>
 
-    <div class="info-set col2-set" style="width: 460px; float: left;">
+    <div class="info-set col2-set pp-review-shipping-method">
       <h2 class="legend"><?php echo $this->__('Shipping Method') ?></h2>
         <div class="col-2">
             <div class="box paypal-shipping-method">
@@ -95,7 +95,7 @@ $shippingAddress = $this->getShippingAddress();
     </div>
 
         <?php echo $this->getChildHtml('agreements'); ?>
-        <div class="buttons-set buttons-set-order" id="review-buttons-container" style="width: 400px; float: right; text-align: left;">
+        <div class="buttons-set buttons-set-order pp-review-buttons-set" id="review-buttons-container">
             <button type="button" id="update_order" class="button btn-checkout"><span><span><?php echo $this->__('Update Order Data') ?></span></span></button>
             <br>
             <button type="button" id="review_button" value="<?php echo $this->__('Place Order') ?>" class="button btn-checkout"><span><span><?php echo $this->__('Place Order') ?></span></span></button>

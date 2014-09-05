@@ -112,6 +112,32 @@
   width: 100%;
 }
 
+// Paypal Review Order
+
+.paypal-review-order {
+  #order_review_form {
+    width: 100%;
+  }
+
+  #shipping_method {
+    margin: 0 auto;
+  }
+}
+
+.pp-review-customer-email {
+  margin: 0 auto 50px;
+  width: 100%;
+}
+
+.pp-review-order-details {
+  margin-bottom: 20px;
+}
+
+.pp-review-buttons-set {
+  margin-left: 20px;
+  text-align: left;
+}
+
 @media only screen and (min-width: 480px) {
   // Mobile landscape + Tablet portrait
 }
@@ -163,6 +189,45 @@
 
   .checkout-types {
     float: right;
+  }
+
+  // Paypal Review Order
+
+  .paypal-review-order {
+    #order_review_form {
+      width: 980px;
+    }
+  }
+
+  .pp-review-customer-email {
+    width: 498px;
+  }
+
+  .pp-review-billing-address {
+    float: left;
+    width: 460px;
+  }
+
+  .pp-review-shipping-address {
+    float: right;
+    width: 460px;
+  }
+
+  .pp-review-shipping-method {
+    float: left;
+    width: 460px;
+  }
+
+  .pp-review-order-details {
+    float: left;
+    margin-bottom: 0;
+    width: 980px;
+  }
+
+  .pp-review-buttons-set {
+    float: right;
+    margin-left: 0;
+    width: 400px;
   }
 }
 

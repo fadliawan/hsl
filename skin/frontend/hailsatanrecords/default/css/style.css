@@ -1769,7 +1769,8 @@ h1.band__title {
 
 .site-footer__section {
   float: left;
-  width: 50%; }
+  margin: 0 3%;
+  width: 44%; }
 
 .footer-menu {
   margin-top: 21px; }
@@ -1830,6 +1831,7 @@ h1.band__title {
 
   .site-footer__section {
     height: 280px;
+    margin: 0;
     width: 25%; } }
 @media only screen and (min-width: 1020px) {
   .site-footer footer {

@@ -15,9 +15,9 @@
 .product {
   display: block;
   float: left;
-  margin: 40px 15px 0 0;
+  margin: 80px 15px 0 0;
   position: relative;
-  width: 330px;
+  width: 320px;
 
   &:nth-child(3n+3) {
     margin-right: 0;
@@ -25,13 +25,18 @@
 }
 
 .product__cover {
-  left: 50px;
+  left: 15px;
   position: absolute;
   @include hsr-transition(.3s all);
   z-index: 200;
 
   .product:hover & {
     left: 15px;
+  }
+
+  .product--tshirt &,
+  .product--print & {
+    left: 50px;
   }
 
   .product--tshirt:hover &,
@@ -41,7 +46,7 @@
 }
 
 .product__vinyl {
-  left: 50px;
+  left: 83px;
   position: absolute;
   @include hsr-transition(.3s all);
   z-index: 100;
@@ -57,9 +62,9 @@
   font-style: italic;
   font-weight: 700;
   line-height: 1em;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
-  right: 0;
+  right: 20px;
   top: -35px;
   @include hsr-transition(.6s all);
   z-index: 400;
@@ -77,7 +82,7 @@
   background-color: rgba(0, 0, 0, .85);
   border-bottom: 2px solid $hsr-red;
   margin-top: 136px;
-  opacity: 0;
+  opacity: 1;
   padding: 15px;
   position: relative;
   text-align: center;
@@ -119,7 +124,7 @@
   float: left;
   line-height: 28px;
   margin-left: 28px;
-  opacity: 0;
+  opacity: 1;
   text-decoration: none;
   text-transform: uppercase;
   @include hsr-transition(.5s .3s all);
@@ -143,7 +148,7 @@
   left: 0;
   position: absolute;
   top: 0;
-  width: 330px;
+  width: 320px;
   z-index: 500;
 }
 
@@ -155,7 +160,6 @@
   float: right;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  max-height: 0;
   line-height: 28px;
   outline: none;
   padding: 0 15px;
@@ -170,5 +174,47 @@
 
   .product.product--active & {
     @include hsr-transition(.1s all);
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  // Mobile landscape + Tablet portrait
+}
+
+@media only screen and (min-width: 1020px) {
+  // Tablet landscape + Desktop
+
+  .product {
+    margin-top: 40px;
+    width: 330px;
+  }
+
+  .product__cover {
+    left: 50px;
+  }
+
+  .product__vinyl {
+    left: 50px;
+  }
+
+  .product__price {
+    opacity: 0;
+    right: 0;
+  }
+
+  .product__info {
+    opacity: 0;
+  }
+
+  .product__detail-link {
+    opacity: 0;
+  }
+
+  .product__detail-link-area {
+    width: 330px;
+  }
+
+  .product__cart-button {
+    max-height: 0;
   }
 }
